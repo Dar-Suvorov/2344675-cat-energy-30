@@ -58,7 +58,7 @@
       background-color: $special_hero-bg;
       position: absolute;
       height: 600px; /* С запасом, хватит на ~10 строк меню. */
-      width: calc(100vw / 2);
+      width: 50vw;
       top: -60px;
       left: -27px;
       z-index: -1;
