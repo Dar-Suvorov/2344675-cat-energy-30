@@ -82,10 +82,10 @@
 
     @media (min-width: $bp_tablet) and (min-resolution: 2dppx) {
       background-image: url("../../images/index-can-tablet@2x.png");
-      bottom: -3px;
+      /* bottom: -3px;
       left: 30px;
       width: 709px;
-      height: 609px;
+      height: 609px; */
     }
 
     @media (min-width: $bp_desktop) {
@@ -98,16 +98,16 @@
 
     @media (min-width: $bp_desktop) and (min-resolution: 2dppx) {
       background-image: url("../../images/index-can-desktop@2x.png");
-      bottom: 49px;
+      /* bottom: 49px;
       left: 447px;
       width: 552px;
-      height: 499px;
+      height: 499px; */
     }
 
     @media (max-width: 767px) and (min-resolution: 2dppx) {
       background-image: url("../../images/index-can-mobile@2x.png");
-      width: 280px;
-      height: 270px;
+      /* width: 280px;
+      height: 270px; */
     }
 
     background-image: url("../../images/index-can-mobile@1x.png");
