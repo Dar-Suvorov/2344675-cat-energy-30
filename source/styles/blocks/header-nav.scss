@@ -44,7 +44,7 @@
   @media (min-width: $bp_desktop) {
     max-width: calc($desktop_width / 2);
     margin-right: 0;
-    margin-top: 5px;
+    margin-top: 6px;
     color: $basic_white;
     font-size: 20px;
     column-gap: 27px;
@@ -130,6 +130,7 @@
 
 .header-nav__link--current { /* Подчеркивание активного пункта меню. */
   position: relative;
+  /* Остальные свойства вынесены в медиавыражения, чтобы не создавать псевдоэлемент в DOM-дереве мобильной версии. */
 
   @media (min-width: $bp_tablet) {
     &::after {
@@ -143,14 +144,14 @@
     }
   }
 
-  @media (min-width: $bp_desktop) {
+  @media (min-width: $bp_desktop) { /* width и left - не по макету, но требуется для PP. Возможно, из-за особенностей ренедра шрифтов.*/
     &::after {
       content: "";
-      width: 100%;
+      width: calc(100% - 9px);
       height: 2px;
       background-color: $basic_white;
       position: absolute;
-      left: 0;
+      left: 6px;
       bottom: 0;
     }
   }
