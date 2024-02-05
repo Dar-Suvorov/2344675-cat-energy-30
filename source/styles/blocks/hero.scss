@@ -88,6 +88,7 @@
       height: 609px; */
     }
 
+
     @media (min-width: $bp_desktop) {
       background-image: url("../../images/index-can-desktop@1x.png");
       bottom: 49px;
@@ -104,7 +105,7 @@
       height: 499px; */
     }
 
-    @media (max-width: 767px) and (min-resolution: 2dppx) {
+    @media (max-width: calc($bp_tablet - 1px)) and (min-resolution: 2dppx) {
       background-image: url("../../images/index-can-mobile@2x.png");
       /* width: 280px;
       height: 270px; */
