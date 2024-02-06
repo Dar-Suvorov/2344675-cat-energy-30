@@ -92,7 +92,7 @@
   }
 
   display: block;
-  padding-top: 25px;
+  padding-top: 24px;
   padding-bottom: 21px;
   padding-left: 22px; /* Боковые поля не могут быть меньше вертикальных */
   padding-right: 22px;
@@ -144,7 +144,7 @@
     }
   }
 
-  @media (min-width: $bp_desktop) { /* width и left - не по макету, но требуется для PP. Возможно, из-за особенностей ренедра шрифтов.*/
+  @media (min-width: $bp_desktop) { /* width и left - не по макету, но требуется для PP. Возможно, из-за особенностей рендера шрифтов.*/
     &::after {
       content: "";
       width: calc(100% - 9px);

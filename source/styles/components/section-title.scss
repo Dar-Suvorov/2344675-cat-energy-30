@@ -1,9 +1,18 @@
 .section-title {
-  font-family: "Oswald", "Lato", "Arial", sans-serif; /* Lato подключен первой альтернативой для того, чтобы при отсутствии Oswald пользователь видел единый шрифт на всей странице. */
+  font-family: "Oswald", "Arial", sans-serif;
   font-size: 36px;
   line-height: 40px;
   margin-top: 0; /* В каждой секции margin сверху чуть разный. Проще указывать padding-top в секциях, чем давать заголовкам уточняющие классы и настраивать в них отступ заголовка.*/
   margin-bottom: 40px;
+
+  @media (min-width: $bp_tablet) {
+    font-size: 60px;
+    line-height: 60px;
+  }
+
+  max-width: 280px; /* calc(100% - 2 * 40px), если не нужно сохранять перенос строки как в макете */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .section-title--hero {
@@ -12,15 +21,20 @@
     font-size: 60px;
     line-height: 60px;
     margin-bottom: 40px;
+    margin-left: 0;
+    margin-right: auto;
     text-align: left;
     max-width: 460px;
     /* Из-за разницы рендеринга шрифтов для Firefox нужно вводить поправку letter-spacing: 1px. В Chrome сразу отобратается по PP. */
+    padding-top: 65px;
   }
 
   color: $basic-white;
+  font-size: 36px;
   line-height: 36px;
-  margin-bottom: 20px;
+  margin-bottom: 21px;
   text-align: center;
   position: relative;
   z-index: 10;
 }
+

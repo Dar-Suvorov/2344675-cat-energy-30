@@ -1,32 +1,86 @@
-.programs__name {
-  font-family: "Oswald", sans-serif;
-  font-size: 24px;
-  line-height: 37px;
-  text-transform: uppercase;
-  margin-bottom: 29px;
+.programs__wrapper {
+  margin: 0 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .programs__card {
   background-color: $basic_grey;
   background-repeat: no-repeat;
-  background-size: 50px; /* Для каждого изображения потребуется подгонять размер (контур кота выходит за границы фонового круга) */
+  padding: 30px 20px 21px;
+  position: relative;
+
+  &::before { /* Зеленый круг под фоном */
+    content: "";
+    display: block;
+    position: absolute;
+    top: 24px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: $basic_green;
+    border-radius: 50%;
+  }
+
+  &::after { /* Черный кот слева от названия программы. */
+    content: "";
+    display: block;
+    position: absolute;
+    /* Значения по умолчанию, для разных изображений может понадобиться подстройка в уточняющих классах. */
+    width: 50px;
+    height: 50px;
+    top: 20px;
+    left: 20px;
+  }
 }
 
 .programs__card--slim {
-  background-image: url("../../images/icons/stack.svg#cat-slim");
+  &::after {
+    background-image: url("../../images/icons/stack.svg#program-slim");
+  }
 }
 
 .programs__card--pro {
-  background-image: url("../../images/icons/stack.svg#cat-pro");
+  &::after {
+    background-image: url("../../images/icons/stack.svg#program-pro");
+    width: 67px;
+    height: 28px;
+    top: 35px;
+    left: 13px;
+  }
+}
+
+.programs__name {
+  margin-top: 0;
+  margin-bottom: 29px;
+  margin-left: 70px;
+  max-width: calc(100% - 50px);
+  font-family: "Oswald", sans-serif;
+  font-size: 24px;
+  line-height: 37px;
+  text-transform: uppercase;
+  hyphens: auto;
 }
 
 .programs__text {
   @include common-text;
+  margin-top: 0;
+  border-bottom: 1px solid $special_border-program;
+  padding-bottom: 22px; /* От текста до черты. */
+  margin-bottom: 20px; /* От черты до следующего блока (ссылки со стрелкой). */
 }
 
 .programs__link {
+  display: block;
   font-family: "Oswald", sans-serif;
   font-size: 16px;
   line-height: 16px;
+  min-width: 134px;
+  width: 134px;
+  max-width: 100%;
+  text-overflow: ellipsis;
   text-transform: uppercase;
+  padding-right: 47px; /* Место под стрелку */
+  /* TODO: стрелка */
 }

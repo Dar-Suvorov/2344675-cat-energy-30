@@ -21,7 +21,7 @@
     background: none;
   }
 
-  padding: 28px 20px 20px 20px;
+  padding: 29px 20px 20px 20px;
 
   /* Фон с котом (мобильная версия) */
   @media (max-width: 767px) and (min-resolution: 2dppx) {
@@ -116,7 +116,7 @@
     background-repeat: no-repeat;
     display: block;
     position: absolute;
-    bottom: 60px;
+    bottom: 63px;
     left: calc(50% - (280px / 2));
     width: 280px;
     height: 270px;
@@ -151,7 +151,7 @@
   margin-left: auto;
   margin-right: auto;
   margin-top: 0;
-  margin-bottom: 299px;
+  margin-bottom: 298px;
   position: relative;
   z-index: 10;
 }
