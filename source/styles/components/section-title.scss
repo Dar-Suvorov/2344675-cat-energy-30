@@ -26,7 +26,6 @@
     text-align: left;
     max-width: 460px;
     /* Из-за разницы рендеринга шрифтов для Firefox нужно вводить поправку letter-spacing: 1px. В Chrome сразу отобратается по PP. */
-    padding-top: 65px;
   }
 
   color: $basic-white;

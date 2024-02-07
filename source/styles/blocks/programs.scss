@@ -1,17 +1,35 @@
-.programs__wrapper {
+.programs {
+  @media (min-width: $bp_tablet) {
+    margin: 0 30px 48px;
+  }
   margin: 0 20px 22px;
+}
+
+.programs__wrapper {
+  @media (min-width: $bp_tablet) {
+    gap: 30px;
+  }
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
 .programs__card {
+  @media (min-width: $bp_tablet) {
+    padding: 77px 320px 60px 52px; /* В планшетной версии padding-right резервирует место для декоративного кота с кругом. */
+  }
   background-color: $basic_grey;
   background-repeat: no-repeat;
   padding: 30px 20px 21px;
   position: relative;
 
   &::before { /* Зеленый круг под фоном */
+    @media (min-width: $bp_tablet) {
+      width: 200px;
+      height: 200px;
+      top: 92px;
+      left: calc(100% - 200px - 63px); /* right не работает, т.к. перебивается общим правилом left. 200px - ширина псевдоэлемента, 63px - правое поле родительского элемента. */
+    }
     content: "";
     display: block;
     position: absolute;
@@ -37,21 +55,42 @@
 
 .programs__card--slim {
   &::after {
+    @media (min-width: $bp_tablet) {
+      width: 140px;
+      height: 194px;
+      /* Центрует любое изображение в ::after посередние круга ::before. */
+      /* 100px = половина круга ::before; -3px = подгонка под PP. */
+      left: calc(100% - 60px - 100px - 3px);
+      top: calc(80px + 100px - 3px);
+      transform: translate(-50%, -50%);
+    }
     background-image: url("../../images/icons/stack.svg#program-slim");
   }
 }
 
-.programs__card--pro {
-  &::after {
-    background-image: url("../../images/icons/stack.svg#program-pro");
-    width: 67px;
-    height: 28px;
-    top: 35px;
-    left: 13px;
+.programs__card--pro::after {
+  @media (min-width: $bp_tablet) {
+    width: 268px;
+    height: 112px;
+    left: calc(100% - 60px - 100px - 3px);
+    top: calc(80px + 100px - -11px);
+    transform: translate(-50%, -50%);
   }
+  background-image: url("../../images/icons/stack.svg#program-pro");
+  /* Подгонка под конкретное изображение программы. */
+  width: 67px;
+  height: 28px;
+  top: 35px;
+  left: 13px;
 }
 
 .programs__name {
+  @media (min-width: $bp_tablet) {
+    font-size: 36px;
+    line-height: 36px;
+    margin-left: 0;
+    margin-bottom: 22px;
+  }
   margin-top: 0;
   margin-bottom: 29px;
   margin-left: 70px;
@@ -64,6 +103,12 @@
 }
 
 .programs__text {
+  @media (min-width: $bp_tablet) {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 37px;
+  }
+
   @include common-text;
   margin-top: 0;
   border-bottom: 1px solid $special_border-program;
@@ -72,12 +117,17 @@
 }
 
 .programs__link {
+  @media (min-width: $bp_tablet) {
+    font-size: 20px;
+    line-height: 1;
+    min-width: 170px;
+    max-width: 340px;
+  }
   display: block;
   font-family: "Oswald", sans-serif;
   font-size: 16px;
   line-height: 16px;
   min-width: 134px;
-  width: 134px;
   max-width: 100%;
   text-overflow: ellipsis;
   text-transform: uppercase;
