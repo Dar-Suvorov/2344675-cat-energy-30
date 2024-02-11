@@ -189,6 +189,38 @@
   min-width: 134px;
   max-width: 100%;
   text-transform: uppercase;
-  padding-right: 47px; /* Место под стрелку */
+  padding-right: 50px; /* Место под стрелку */
   /* TODO: стрелка */
+  position: relative;
+}
+
+.programs__link::before { /* Тело стрелки */
+  @media (min-width: $bp_tablet) {
+    right: 7px;
+  }
+
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 2px;
+  right: 15px;
+  top: 7px;
+  background-color: $basic_black;
+}
+
+.programs__link::after { /* Острие стрелки */
+  @media (min-width: $bp_tablet) {
+    top: -3px;
+    right: 0;
+  }
+
+  content: url('data:image/svg+xml;utf8, <svg viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="m7 6-6.75 5.2v-10.4l6.75 5.2Z" fill="%23000000"/></svg>');
+  /* Вставлено таким способом, т.к. по какой-то причине вставка через стек (как фон или маска) не работает (п/эл-т занимает место, но не отображается).
+  Решетка в "fill=#000000" заменена на %23.*/
+  /* Контур не реализован средствами CSS (блок с двумя границами, повернутсй на 45 градусов), т.к. грани стрелки не под 45 градусов друг к другу. */
+  position: absolute;
+  right: 9px;
+  top: 0;
+  width: 7px;
+  height: 12px;
 }
