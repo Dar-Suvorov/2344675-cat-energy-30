@@ -1,14 +1,41 @@
+.factoids {
+  background-color: inherit; /* Наследуем цвет от секции, для передачи его в __parameter. */
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.factoids__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: inherit;
+  width: 124px;
+}
+
 .factoids__digit {
   font-family: "Oswald", sans-serif;
   font-size: 24px;
-  line-height: 24px;
+  line-height: 29px; /* По макету 24px, но выносные элементы букв с разных строк наезжают друг на друга. */
   text-align: center;
+  border: 1px solid $special_grey;
+  width: 100%;
+  padding: 13px 15px 12px; /* 13px и 12px - компенсация увеличеного Line-height. */
 }
 
 .factoids__parameter {
   color: $special_dark-grey;
+  background-color: inherit;
   font-size: 12px;
   line-height: 100%;
   text-align: center;
   margin-left: 0;
+  width: 87px;
+  min-height: 31px;
+  padding: 1px 5px 5px;
+  transform: translateY(-10px);
+  text-overflow: ellipsis;
+  overflow: hidden;
 }

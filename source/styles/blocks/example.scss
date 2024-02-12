@@ -1,9 +1,18 @@
 .example {
   background-color: $basic_grey;
+  padding: 25px 20px 40px;
 }
 
 .example__text {
   @include common-text;
+  margin-top: 0; /* Переопределяет браузерный 1em. */
+  margin-bottom: 18px;
+}
+
+.example__totals {
+  margin: 0 auto 20px;
+  display: flex;
+  justify-content: center;
 }
 
 .example__totals-line {
@@ -11,4 +20,9 @@
   font-size: 14px;
   line-height: 20px;
   text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  min-width: 65px;
 }
