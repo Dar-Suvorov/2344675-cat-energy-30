@@ -1,21 +1,95 @@
 .example {
+  @media (min-width: $bp_tablet) {
+    padding: 16px 30px 100px;
+    background-color: $basic_white;
+  }
+
+  @media (min-width: $bp_desktop) {
+    width: $desktop_width;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+  }
   background-color: $basic_grey;
   padding: 25px 20px 40px;
 }
 
+.example__wrapper {
+  @media (min-width: $bp_desktop) {
+    width: 600px;
+    margin-right: 60px;
+  }
+}
+
 .example__text {
+  @media (min-width: $bp_tablet) {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 55px;
+  }
+
+  @media (min-width: $bp_desktop) {
+    width: 433px; /* При именно такой ширине переносы строк соответствуют макету. При расхождении в переносах строк из-за различного рендера шрифтов в разных браузерах возможное решение: увеличить ширину блока; между неразрывными словами проставить span с br внутри и классом, который скрывает его на мобильной и планшетной версии. */
+    margin-bottom: 70px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
   @include common-text;
   margin-top: 0; /* Переопределяет браузерный 1em. */
   margin-bottom: 18px;
 }
 
+.example__digits { /* Контейнер для фактоидов (компоненты) и суммы затрат. */
+  @media (min-width: $bp_tablet) {
+    display: flex;
+    margin-bottom: 68px;
+  }
+
+  @media (min-width: $bp_desktop) {
+    flex-direction: column;
+  }
+  background-color: inherit; /* Наследуем цвет от секции, для передачи его в factoids__parameter. */
+}
+
 .example__totals {
+  @media (min-width: $bp_tablet) {
+    flex-direction: column;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-top: 13px;
+    height: min-content;
+    max-width: 250px;
+  }
+
+  @media (min-width: $bp_desktop) {
+    width: 360px;
+    margin-left: 0;
+    margin-right: auto;
+    flex-direction: row;
+    min-width: 360px;
+    justify-content: flex-start;
+  }
+
   margin: 0 auto 20px;
   display: flex;
   justify-content: center;
 }
 
 .example__totals-line {
+  @media (min-width: $bp_tablet) {
+    font-size: 20px;
+    line-height: 20px;
+    text-align: right;
+    margin-bottom: 10px;
+  }
+
+  @media (min-width: $bp_desktop) {
+    margin-left: 0;
+    text-align: left;
+  }
+
   font-family: "Oswald", sans-serif;
   font-size: 14px;
   line-height: 20px;
@@ -25,4 +99,19 @@
   text-overflow: ellipsis;
   overflow: hidden;
   min-width: 65px;
+}
+
+.example__totals-line:first-child {
+  @media (min-width: $bp_tablet) {
+    transform: translateX(5px); /* В мобильной версии есть пробел после двоеточия, в планшетной - нет; нужно скорректировать его ширину.
+    Пробел в разметке сделан неразрывным, чтобы он не съедался браузером (это конец строки). */
+  }
+}
+
+.example__totals-line--digit { /* По макету в десктопной версии у цифры "15 тыс" выключка по центру, по оси второго фактоида. */
+  @media (min-width: $bp_desktop) {
+    width: 162px; /* Ширина фактоида. */
+    margin-left: auto;
+    text-align: center;
+  }
 }

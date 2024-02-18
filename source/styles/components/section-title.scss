@@ -38,3 +38,13 @@
   z-index: 10;
 }
 
+.section-title--example {
+  @media (min-width: $bp_tablet) {
+    margin-bottom: 57px;
+  }
+
+  @media (min-width: $bp_desktop) {
+    margin-top: 1px; /* Коррекция под PP. */
+    margin-bottom: 143px;
+  }
+}

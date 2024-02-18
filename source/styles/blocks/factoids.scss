@@ -1,12 +1,31 @@
 .factoids {
+  @media (min-width: $bp_tablet) {
+    justify-content: flex-start;
+    column-gap: 42px;
+    row-gap: 0;
+    // width: max-content;
+    max-width: 55%;
+  }
+
+  @media (min-width: $bp_desktop) {
+    width: max-content;
+    max-width: 100%;
+    flex-direction: row;
+  }
+
   background-color: inherit; /* Наследуем цвет от секции, для передачи его в __parameter. */
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
   margin-top: 0;
   margin-bottom: 5px;
 }
 
 .factoids__item {
+  @media (min-width: $bp_tablet) {
+    width: 162px;
+  }
   position: relative;
   display: flex;
   flex-direction: column;
@@ -16,6 +35,12 @@
 }
 
 .factoids__digit {
+  @media (min-width: $bp_tablet) {
+    font-size: 30px;
+    line-height: 37px;
+    padding-top: 16px;
+    padding-bottom: 18px;
+  }
   font-family: "Oswald", sans-serif;
   font-size: 24px;
   line-height: 29px; /* По макету 24px, но выносные элементы букв с разных строк наезжают друг на друга. */
@@ -26,6 +51,12 @@
 }
 
 .factoids__parameter {
+  @media (min-width: $bp_tablet) {
+    font-size: 14px;
+    line-height: 14px;
+    width: max-content;
+    max-width: 150px;
+  }
   color: $special_dark-grey;
   background-color: inherit;
   font-size: 12px;
