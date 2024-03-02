@@ -59,3 +59,11 @@ li {
   overflow: hidden;
 }
 
+.br-visible { /* Для переноса строк в соответствии с макетом, для планшетной и десктопной версии. */
+  display: none;
+
+  @media (min-width: $bp_tablet) {
+    display: inline;
+  }
+}
+

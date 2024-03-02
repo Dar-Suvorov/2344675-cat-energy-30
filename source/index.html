@@ -83,7 +83,7 @@
         <li class="features__item features__item--leaf">Функциональное питание содержит только полезные питательные вещества.</li>
         <li class="features__item features__item--glass">Выпускается в&nbsp;виде порошка, который нужно лишь залить кипятком и готово.</li>
         <li class="features__item features__item--fork">Замените один-два приема обычной еды на наше функциональное питание.</li>
-        <li class="features__item features__item--timer">Уже через месяц наслаждайтесь изменениями к&nbsp;лучшему вашего питомца!</li>
+        <li class="features__item features__item--timer">Уже через месяц наслаждайтесь изменениями к&nbsp;лучшему <br class="br-visible">вашего питомца!</li>
       </ul>
     </section>
 
@@ -112,10 +112,23 @@
         </div>
       </div>
       <div class="slider"> <!-- слайдер -->
-        <picture> <!-- TODO: вставить сначала через bg-image, потом реализовать слайдер. -->
-          <img src="images/slider-placeholder@1x.png" srcset="images/slider-placeholder@2x.png 2x" width="280"
-            height="256" alt="Ваш кот до и после: почувствуйте разницу!">
+        <picture>
+          <source media="(min-width: 768px)" srcset="images/slider-placeholder-tablet@1x.png, images/slider-placeholder-tablet@2x.png 2x" width="560" height="512">
+          <img src="images/slider-placeholder-mobile@1x.png" srcset="images/slider-placeholder-mobile@2x.png 2x" width="280" height="256" alt="Ваш кот до и после: почувствуйте разницу!">
         </picture>
+
+<!--    <picture>
+          <img src="images/slider-placeholder-mobile@1x.png" srcset="images/slider-placeholder-mobile@2x.png 2x" width="280" height="256" alt="Ваш кот до и после: почувствуйте разницу!">
+        </picture>
+-->
+
+<!--
+        <picture>
+          <source media="(min-width: 1280px)" srcset="img/why-jacket-desktop@1x.jpg, img/why-jacket-desktop@2x.jpg 2x">
+          <img class="section-whyto__image" src="img/why-jacket-mobile@1x.jpg" srcset="img/why-jacket-mobile@2x.jpg 2x" width="121" height="148" alt="Товары с Resale Ward.">
+      </picture>
+ -->
+
       </div>
     </section>
   </main>

@@ -98,6 +98,12 @@
   background-image: url("../../images/icons/stack.svg#feature-timer");
 }
 
+.features__item--timer {
+  @media (min-width: $bp_tablet) {
+    width: 242px; /* При обычной ширине 230px "наслаждайтесь" переносится на новую строку не по макету. Запас ширины родителя достаточный для увеличения потомка. */
+  }
+}
+
 @media (min-width: $bp_tablet) {
   .features__item::before { /* Цифра под элементом списка. */
     counter-increment: features-counter;

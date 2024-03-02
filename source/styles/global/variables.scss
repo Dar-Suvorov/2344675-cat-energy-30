@@ -8,7 +8,8 @@ $basic_grey: #f2f2f2;
 $special_black: #111111; /* В блоке "Приглашаем к сотрудничеству". */
 $special_grey-2: #ebebeb;
 $special_grey: #cdcdcd;
-$special_grey-2: #666666;
+$special_grey-3: #666666; /* В Figma обозначен special_grey-2 (имя дублируется с #ebebeb) */
+$special_grey-4: #eaeaea; /* Серая подложка под слайдером / блоком "Живой пример" */
 $special_dark-grey: #444444;
 $special_dark-grey-2: #222222;
 $special_border: #e6e6e6; /* Рамки между некоторыми блоками в мобильной версии. */
