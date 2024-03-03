@@ -13,7 +13,7 @@
   }
 
   background-color: $special_grey-4;
-  padding: 25px 20px 40px;
+  padding: 25px 20px 39px;
   position: relative;
 
   &::before { /* Серая подложка под слайдером / блоком "Живой пример" */
@@ -66,7 +66,7 @@
 
   @media (min-width: $bp_desktop) {
     flex-direction: column;
-    margin-bottom: 59px;
+    margin-bottom: 63px;
   }
 
   background-color: inherit; /* Наследуем цвет от секции, для передачи его в factoids__parameter. */
