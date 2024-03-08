@@ -1,3 +1,34 @@
 .footer-links {
   background-color: $basic_grey;
+  padding-top: 24px;
+  padding-bottom: 20px;
+
+  @media (min-width: $bp_tablet) {
+    display: flex;
+    flex-direction: row;
+    padding-top: 34px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 55px;
+  }
+}
+
+.footer-links__logo-link {
+  display: block;
+  /* Увеличена область клика/тапа. */
+  height: 48px; /* 24px (высота логотипа) + 2*12 (по половине высоты сверху и снизу). */
+  width: 152px; /* 128px (ширина логотипа + 2*12 (тот же воздух, что и слева/справа. */
+  margin-bottom: 7px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: url("../../images/icons/stack.svg#logo-footer");
+  background-size: 128px 24px;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @media (min-width: $bp_tablet) {
+    margin-left: 0;
+    transform: translateX(-11px);
+    margin-top: 12px;
+  }
 }

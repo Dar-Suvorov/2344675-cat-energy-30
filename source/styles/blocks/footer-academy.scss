@@ -1,5 +1,14 @@
 .footer-academy {
-  display: block;
+  padding: 20px 20px 20px;
+  display: flex;
+  justify-content: space-between;
+  outline-offset: -5px; /* Делает outline видимым, иначе снизу и по бокам он находится за границей экрана. */
+
+  @media (min-width: $bp_tablet) {
+    transform: translateX(20px); /* translateX вместо простой отмены padding right - для более красивой области клика. */
+    justify-content: flex-start;
+    gap: 23px;
+  }
 }
 
 .footer-academy__name {
@@ -7,4 +16,5 @@
   font-size: 16px;
   line-height: 20px;
   margin: 0;
+  padding-top: 6px;
 }
