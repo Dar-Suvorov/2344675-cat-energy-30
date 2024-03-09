@@ -45,14 +45,23 @@
     max-width: calc($desktop_width / 2);
     margin-right: 0;
     margin-top: 6px;
-    color: $basic_white;
     font-size: 20px;
     column-gap: 27px;
     letter-spacing: 1px; /* Не указан в Figma, но нужен по PP. */
+  }
 
-    /* Зеленый фон позади header и main / Hero */
-    /* Формирует зеленый фон от верха меню (внахлест) до верхнего края страницы. */
-    &::before {
+  border-bottom: 1px solid $special_border;
+}
+
+.header-nav__list--index {
+  @media (min-width: $bp_desktop) {
+    color: $basic_white;
+  }
+
+  &::before {
+    @media (min-width: $bp_desktop) {
+      /* (index) Зеленый фон позади header и main / Hero */
+      /* Формирует зеленый фон от верха меню (внахлест) до верхнего края страницы. */
       content: "";
       display: block;
       background-color: $special_hero-bg;
@@ -64,9 +73,9 @@
       z-index: -1;
     }
   }
-
-  border-bottom: 1px solid $special_border;
 }
+
+
 
 .header-nav__item {
   @media (min-width: $bp_tablet) {
