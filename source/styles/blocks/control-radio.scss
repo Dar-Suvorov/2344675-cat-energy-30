@@ -1,0 +1,84 @@
+.control-radio {
+  position: relative;
+  font-family: "Oswald", sans-serif;
+  font-size: 16px;
+  line-height: 18px;
+  color: $special_dark-grey;
+  text-transform: uppercase;
+  width: max-content;
+  min-height: 30px;
+  padding-top: 6px;
+  padding-left: 45px;
+  transition: border-color $anim-slow;
+
+  @media (min-width: $bp_tablet) {
+    font-size: 20px;
+    line-height: 20px;
+    min-height: 40px;
+    padding-top: 12px;
+    padding-left: 50px;
+  }
+
+  &:hover .control-radio__label::before {
+    border-color: $special_grey-6;
+  }
+
+  &:focus-within {
+    /* Вместо outline - изменение цвета шрифта. Это лучше выглядит, т.к. после клика состояние фокуса остается на элементе. В приведенном случае пользователь а) не видит оставшуюся после клика рамку outline'а, б) видит, что элемент выбран вручную, а не был задан по умолчанию.  При клике на другое место страницы визуальный акцент фокуса сбрасывается. */
+    color: $basic_green-2;
+  }
+
+  &:focus-within .control-radio__label::before {
+    border-color: $special_dark-grey-2;
+  }
+}
+
+.control-radio__input:disabled + .control-radio__label {
+  opacity: 0.3;
+}
+
+.control-radio__label {
+  &::before {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 30px;
+    border: 1px solid $special_grey;
+    border-radius: 50%;
+    background-color: $basic_white;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    @media (min-width: $bp_tablet) {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background-color: $basic_green;
+    position: absolute;
+    left: 9px;
+    top: 9px;
+    opacity: 0;
+    transition: opacity $anim-slow;
+
+    @media (min-width: $bp_tablet) {
+      width: 18px;
+      height: 18px;
+      top: 11px;
+      left: 11px;
+    }
+  }
+}
+
+.control-radio__input:checked + .control-radio__label::after {
+  opacity: 1;
+}
+

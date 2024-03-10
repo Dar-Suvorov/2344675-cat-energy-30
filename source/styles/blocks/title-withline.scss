@@ -1,0 +1,62 @@
+.title-withline { /* Заголовок с зеленой линией. */
+  font-family: "Oswald", sans-serif;
+  font-size: 24px;
+  line-height: 26px;
+  width: max-content;
+  margin-left: 20px;
+  margin-right: 20px;
+      background-color: yellow;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: calc(100vw - 100% - 20px - 20px);
+    left: calc(100% + 20px);
+    top: 15px;
+    height: 2px;
+    background-color: $basic_green;
+  }
+
+  @media (min-width: $bp_tablet) {
+    margin-left: 70px;
+    margin-right: 70px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 30px;
+      left: -70px;
+      /* width: calc((100vw - 100%)); */ /* Предельные значения: а) текста нет совсем, тогда ширина п/элемента = 100 vw; б) текст занимает 100% ширины, тогда ширина п/элемента = ширина поля страницы. */
+      top: 15px;
+      height: 2px;
+      background-color: $basic_green;
+    }
+  }
+
+  @media (min-width: $bp_desktop) {
+    margin-left: 0;
+
+    &::before {
+      position: absolute;
+      // right: calc((100vw - 100%) / 2 - 40px);
+      width: calc((100vw - $desktop_width) / 2 - 40px);
+      left: calc(-1 * ((100vw - $desktop_width) / 2));
+    }
+  }
+}
+
+.title-withline--two-line {
+  display: block;
+  width: 200px;
+  max-width: 100%;
+
+  @media (min-width: $bp_tablet) {
+    width: max-content;
+  }
+
+  &::after {
+      left: calc(100% + 10px);
+      width: calc(100vw - 100% - 20px - 10px);
+  }
+}

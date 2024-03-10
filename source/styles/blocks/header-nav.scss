@@ -30,6 +30,8 @@
 }
 
 .header-nav__list {
+  display: none; /* При наличии класса header-nav__list--no-js становится Flex. */
+
   @media (min-width: $bp_tablet) {
     display: flex;
     flex-direction: row;
@@ -51,6 +53,11 @@
   }
 
   border-bottom: 1px solid $special_border;
+}
+
+.header-nav__list--no-js { /* По умолчанию, без JS, меню видно. */
+  display: flex;
+  flex-direction: column;
 }
 
 .header-nav__list--index {
@@ -105,11 +112,11 @@
   padding-bottom: 21px;
   padding-left: 22px; /* Боковые поля не могут быть меньше вертикальных */
   padding-right: 22px;
-
   font-family: "Oswald", "Arial", sans-serif;
   font-size: 20px;
   line-height: 20px;
   text-transform: uppercase;
+  transition: opacity $anim-slow;
 
   &:hover {
     opacity: 0.6;

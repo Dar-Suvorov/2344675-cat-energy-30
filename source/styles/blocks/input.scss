@@ -1,0 +1,83 @@
+.input { /* Элементы ввода текста (строка, число, email, телефон, текст). */
+  position: relative;
+  font-family: "Oswald", sans-serif;
+  font-size: 16px;
+  line-height: 18px;
+  color: $special_dark-grey;
+  text-transform: uppercase;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  box-sizing: border-box;
+
+  @media (min-width: $bp_tablet) {
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  &:hover input {
+    border-color: $special_grey;
+  }
+}
+
+.input--input { /* Собственно input, однострочное поле ввода строки. */
+  width: 100%;
+}
+
+.input--input label {
+  width: max-content;
+}
+
+.input__input:focus-visible { /* Поле ввода у любых элементов input. */
+  outline: 2px solid $special_dark-grey;
+}
+
+.input--email,
+.input--phone {
+  @media (min-width: $bp_desktop) {
+    width: 569px;
+  }
+}
+
+.input--input input {
+  overflow: hidden;
+  appearance: none;
+  --moz-appearance: none;
+  --webkit-appearance: none;
+}
+
+.input--input input,
+.input--email input,
+.input--phone input {
+  border: 1px solid $special_grey-5;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  text-transform: uppercase;
+  padding: 14px 15px 13px;
+  flex-grow: 1;
+}
+
+.input--textarea {
+  width: calc(100% - 20px - 20px);
+  resize: none;
+  margin-left: 20px;
+  border: 1px solid $special_grey-5;
+  padding: 14px 15px 13px;
+
+  @media (min-width: $bp_tablet) {
+    margin-left: 70px;
+    width: calc(100% - 70px - 70px);
+  }
+
+  @media (min-width: $bp_desktop) {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $special_dark-grey;
+  }
+}

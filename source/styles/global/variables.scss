@@ -10,14 +10,21 @@ $special_grey-2: #ebebeb;
 $special_grey: #cdcdcd;
 $special_grey-3: #666666; /* В Figma обозначен special_grey-2 (имя дублируется с #ebebeb) */
 $special_grey-4: #eaeaea; /* Серая подложка под слайдером / блоком "Живой пример" */
+$special_grey-5: #e7e7e7; /* Рамка input'ов. */
+$special_grey-6: #bababa; /* Рамка input'ов при наведении. */
 $special_dark-grey: #444444;
 $special_dark-grey-2: #222222;
 $special_border: #e6e6e6; /* Рамки между некоторыми блоками в мобильной версии. */
 $special_border-2: #d9d9d9; /* Черта под описанием программы (Index / Programs), вокруг соцсетей в футере. */
+$special_border-3: #d9d9d9; /* Обводка выбора программы на странице "Подбор программы". */
+
 $special_hero-bg: #65a83e;
 $status_error: #ff8282;
+$outline-color: #111111;
 
 $bp_tablet: 768px;
 $bp_desktop: 1440px;
 $desktop_width: 1220px; /* Ширина контента (фикс) десктопной версии. */
 
+$anim-slow: 0.2s ease-in-out; /* Медленная Анимация состояний интерактивных элементов. */
+$anim-fast: 0.1s ease-in-out; /* Быстраяя Анимация состояний интерактивных элементов. */

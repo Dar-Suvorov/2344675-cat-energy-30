@@ -1,0 +1,95 @@
+.control-checkbox {
+  position: relative;
+  font-family: "Oswald", sans-serif;
+  font-size: 16px;
+  line-height: 18px;
+  color: $special_dark-grey;
+  text-transform: uppercase;
+  width: max-content;
+  min-height: 40px;
+  padding-top: 12px;
+  padding-left: 45px;
+  transition: color $anim-slow, border-color $anim-slow;
+
+
+  @media (min-width: $bp_tablet) {
+    font-size: 20px;
+    line-height: 20px;
+    min-height: 40px;
+    padding-left: 50px;
+  }
+
+  &:focus-within .control-checkbox__label::before {
+    border-color: $special_dark-grey-2;
+  }
+
+  &:focus-within {
+    color: $basic_green-2;
+  }
+}
+
+.control-checkbox__input:disabled + .control-checkbox__label {
+  opacity: 0.3;
+}
+
+.control-checkbox__label {
+  /* Для точного центрирования галочки ::after. */
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 30px;
+    border: 1px solid $special_grey;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    @media (min-width: $bp_tablet) {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    width: 18px;
+    height: 14px;
+    position: absolute;
+    top: 8px;
+    left: 7px;
+    background-image: url("../../images/icons/stack.svg#tick");
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity $anim-slow;
+
+    @media (min-width: $bp_tablet) {
+      width: 24px;
+      height: 19px;
+      top: 11px;
+      left: 8px;
+    }
+  }
+}
+
+.control-checkbox__input:checked + .control-checkbox__label::after {
+  opacity: 1;
+}
+
+
+
+.control-checkbox--additive { /* Уточнение для списка дополнительных товаров на странице подбора программы. */
+  @media (min-width: $bp_tablet) {
+    width: 285px; /* По ширине кнопки под списком дополнительных товаров. */
+        outline: 1px solid red;
+  }
+
+  @media (min-width: $bp_desktop) {
+    width: 200px; /* Примерно. */
+        outline: 1px solid red;
+  }
+}

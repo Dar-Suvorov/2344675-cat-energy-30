@@ -25,10 +25,24 @@
   background-size: 128px 24px;
   background-position: center;
   background-repeat: no-repeat;
+  transition: opacity $anim-slow;
 
   @media (min-width: $bp_tablet) {
     margin-left: 0;
     transform: translateX(-11px);
     margin-top: 12px;
   }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:focus-visible {
+    outline: none;
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+}
 }

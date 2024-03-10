@@ -28,92 +28,91 @@
 <!--         <img src="images/header-burgermenu.svg" width="24" height="24" alt="кнопка навигации">
  -->        <span class="visually-hidden">Открыть меню.</span>
       </button>
-      <ul class="header-nav__list">
+      <ul class="header-nav__list"> <!-- добавить класс header-nav__list--no-js -->
         <li class="header-nav__item">
-          <a class="header-nav__link header-nav__link--current" href="index.html" aria-current="page">Главная</a>
+          <a class="header-nav__link" href="index.html" aria-current="page">Главная</a>
         </li>
         <li class="header-nav__item">
           <a class="header-nav__link" href="catalog.html">Каталог продукции</a>
         </li>
         <li class="header-nav__item">
-          <a class="header-nav__link" href="form.html">Подбор программы</a>
+          <a class="header-nav__link header-nav__link--current" href="form.html">Подбор программы</a>
         </li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <section>
-      <h1>Подбор программы</h1>
-      <form action="https://echo.htmlacademy.ru/" method="get">
-        <h2 class="visually-hidden">Заявка на подбор программы</h2>
-        <div>Заполните анкету, и мы подберем программу питания для вашего кота</div>
-        <div> <!-- В десктопной группы полей располжены по горизонтали, в других - по вертикали. -->
-          <div> <!-- Для расположения заголовка и поля в один ряд. -->
+    <form class="form-container" action="https://echo.htmlacademy.ru/" method="get">
+      <h1 class="title-inner">Подбор программы</h1>
+      <div class="title-inner-annotation"> Заполните анкету, и&nbsp;мы подберем программу питания для вашего кота</div>
+      <div class="form-container form-container__cat-all">
+        <ul class="form-container form-container__cat-passport">
+          <li class="input input--input">
             <label for="cat-name">Имя:*</label>
-            <input name="cat-name" id="cat-name" type="text" value="Барсик" required>
-          </div>
-          <div>
-            <label for="cat-weight">Вес (кг):*</label>
-            <input name="cat-weight" id="cat-weight" type="number" value="7" min="0" step="0.5" required>
-          </div>
-          <div>
-            <label for="cat-age">Возраст (лет):</label>
-            <input name="cat-age" id="cat-age" type="number" value="7" min="0" step="0.5">
-          </div>
-          <div> <!-- Для формирования рамки вокруг группы радиокнопок. -->
-            <label>
-              <input type="radio" name="program" value="slim" checked>
-              <span>похудение</span>
-            </label>
-            <label>
-              <input type="radio" name="program" value="pro">
-              <span>Набор массы</span>
-            </label>
-            <label>
-              <input type="radio" name="program" value="not-decided">
-              <span>Не знаю (Нужен ваш совет)</span>
-            </label>
-          </div>
-        </div>
-        <h2>Контактные данные (владельца кота)</h2>
-        <div> <!-- В десктопной группы полей располжены рядом по горизонтали, в других - по вертикали. -->
-          <div>
-            <label for="email">E-mail:*</label>
-            <input name="email" id="email" type="email" value="kuklachev@gmail.com" required>
-          </div>
-          <div>
-            <label for="phone">Телефон:*</label>
-            <input name="phone" id="phone" type="tel" value="8 (960) 900-60-90" required>
-          </div>
-        </div>
-        <h2>Комментарий</h2>
-        <textarea>Расскажите обо всех повадках кота</textarea>
-        <h2>Дополнительно</h2>
-        <div> <!-- В десктопной и планшетной чекбоксы в строку и в две строки, в мобильной - в столбик. -->
-          <label>
-            <input type="checkbox" name="additives" value="sweetener" checked>
-            <span>сахарозаменитель</span>
-          </label>
-          <label>
-            <input type="checkbox" name="additives" value="water">
-            <span>питьевая вода</span>
-          </label>
-          <label>
-            <input type="checkbox" name="additives" value="milk">
-            <span>молоко</span>
-          </label>
-          <label>
-            <input type="checkbox" name="additives" value="vitamins">
-            <span>витамины</span>
-          </label>
-        </div>
-        <div> <!-- В десктопной и планшетной - в строку, в мобильной - в столбик. -->
-          <button type="submit">отправить заявку</button>
-          <div>* — Обязательные поля</div>
-        </div>
-      </form>
-    </section>
+            <input class="input__input" name="cat-name" id="cat-name" type="text" value="Барсик" required>
+          </li>
+          <li class="input input--input">
+            <label for="cat-weight">Вес&nbsp;(кг):*</label>
+            <input class="input__input" name="cat-weight" id="cat-weight" type="number" value="7" min="0" step="0.5" required>
+          </li>
+          <li class="input input--input">
+            <label for="cat-age">Возраст&nbsp;(лет):</label>
+            <input class="input__input" name="cat-age" id="cat-age" type="number" value="7" min="0" step="0.5">
+          </li>
+        </ul>
+        <ul class="form-container form-container__cat-goal">
+          <li class="control-radio">
+            <input class="visually-hidden control-radio__input" type="radio" name="program" value="slim" id="slim" checked>
+            <label class="control-radio__label" for="slim">Похудение</label>
+          </li>
+          <li class="control-radio">
+            <input class="visually-hidden control-radio__input" type="radio" name="program" value="pro" id="pro">
+            <label class="control-radio__label" for="pro">Набор массы</label>
+          </li>
+          <li class="control-radio">
+            <input class="visually-hidden control-radio__input" type="radio" name="program" value="not-decided" id="not decided">
+            <label class="control-radio__label" for="not decided">Не знаю (Нужен ваш совет)</label>
+          </li>
+        </ul>
+      </div>
+      <h2 class="title-withline title-withline--two-line">Контактные данные (владельца кота)</h2>
+      <ul class="form-container form-container__owner-info">
+        <li class="input input--email">
+          <label for="email">E-mail:*</label>
+          <input class="input__input" name="email" id="email" type="email" value="kuklachev@gmail.com" required>
+        </li>
+        <li class="input input--phone">
+          <label for="phone">Телефон:*</label>
+          <input class="input__input" name="phone" id="phone" type="tel" value="8 (960) 900-60-90" required>
+        </li>
+      </ul>
+      <h2 class="title-withline">Комментарий</h2>
+      <textarea class="input input--textarea" id="cat-habits" name="cat-habits" placeholder="Расскажите о вашем коте." rows=5>Расскажите обо всех повадках кота</textarea> <!-- В макете этот текст выглядит как содержимое, а не плейсхолдер. В разметке текст другой, чтобы не сбивать с толку пользователя (он только что удалил текст, и вот текст снова появился). Если на бек будет приходить строка, заданная по умолчанию - значит, пользователь ее не изменял, и ее можно отфильтровать перед импортом в базу заказов. -->
+      <h2 class="title-withline">Дополнительно</h2>
+      <ul class="form-container form-container__additives">
+        <li class="control-checkbox control-checkbox--additive">
+          <input class="visually-hidden control-checkbox__input" type="checkbox" name="additives" value="sweetener" id="sweetener" checked>
+          <label class="control-checkbox__label" for="sweetener">сахарозаменитель</label>
+        </li>
+        <li class="control-checkbox control-checkbox--additive">
+          <input class="visually-hidden control-checkbox__input" type="checkbox" name="additives" value="water" id="water">
+          <label class="control-checkbox__label" for="water">питьевая вода</label>
+        </li>
+        <li class="control-checkbox control-checkbox--additive">
+          <input class="visually-hidden control-checkbox__input" type="checkbox" name="additives" value="milk" id="milk">
+          <label class="control-checkbox__label" for="milk">молоко</label>
+        </li>
+        <li class="control-checkbox control-checkbox--additive">
+          <input class="visually-hidden control-checkbox__input" type="checkbox" name="additives" value="vitamins" id="vitamins">
+          <label class="control-checkbox__label" for="vitamins">витамины</label>
+        </li>
+      </ul>
+      <div class="form-container form-container__order"> <!-- В десктопной и планшетной - в строку, в мобильной - в столбик. -->
+        <button class="button-primary button-primary--form" type="submit">отправить заявку</button>
+        <div class="form-container form-container__comment">* — Обязательные поля</div>
+      </div>
+    </form>
   </main>
 
   <footer class="footer">
@@ -143,7 +142,7 @@
     </section>
     <section class="footer-links">
       <h2 class="visually-hidden">Наши ссылки:</h2>
-      <a class="footer-links__logo-link" href="#">
+      <a class="footer-links__logo-link" href="index.html">
         <!-- <img class="footer-links__logo-image" src="images/logo-text.svg" width="128" height="24" alt="Cat Energy"> -->
         <span class="visually-hidden">Логотип Cat Energy</span>
       </a>
@@ -168,7 +167,7 @@
         <p class="footer-academy__name">HTML Academy</p>
         <svg class="footer-academy__logo" width="27" height="34" viewBox="0 0 27 34" fill="none"
           xmlns="http://www.w3.org/2000/svg">
-          <path
+          <path class="footer-academy__path"
             d="M13.6426 0.0157537L13.5 0L0 1.40733V26.0129L13.5 34L27 26.0129V1.40733L13.6426 0.0157537ZM25.2344 25.0151L13.5 31.9573L1.76561 25.0151V14.9293L13.4507 21.8451L13.4701 23.0984L5.45351 18.3548L5.44295 19.5801L13.4894 24.3885L13.5088 25.675L5.46408 20.9174L5.45351 22.1427L13.5 26.9511L21.6239 22.1182V20.8929V16.909L25.2432 14.7595L25.2344 25.0151ZM25.2344 13.4519L22.0147 15.3319L20.5325 16.2071L13.4666 12.0201L13.456 13.2454L19.4957 16.818L19.4429 16.8495L19.3126 16.9247L18.4536 17.4166L13.4666 14.4689L13.456 15.6942L17.3921 18.0222L16.4591 18.6314L16.438 18.6436L13.4666 16.902L13.456 18.1273L15.4029 19.2615L13.4155 20.4483L1.7973 13.5762L13.4349 6.61831L25.2344 13.4519ZM25.2344 12.2266L13.4401 5.31075L1.76561 12.2196V2.9897L13.5 1.76442L25.2344 2.9897V12.2266Z"
             fill="#666666" />
         </svg>

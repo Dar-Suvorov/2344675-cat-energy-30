@@ -3,12 +3,33 @@
   display: flex;
   justify-content: space-between;
   outline-offset: -5px; /* Делает outline видимым, иначе снизу и по бокам он находится за границей экрана. */
+  transition: opacity $anim-fast;
 
   @media (min-width: $bp_tablet) {
     transform: translateX(20px); /* translateX вместо простой отмены padding right - для более красивой области клика. */
     justify-content: flex-start;
     gap: 23px;
   }
+
+  &:hover .footer-academy__path {
+    fill: $basic_green;
+  }
+
+  &:focus-visible {
+    outline: none;
+  }
+
+  &:focus-visible .footer-academy__path {
+    fill: $basic_green;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.footer-academy__path {
+  transition: fill $anim-slow;
 }
 
 .footer-academy__name {

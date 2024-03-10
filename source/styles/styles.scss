@@ -7,6 +7,10 @@
 /* COMPONENTS */
 @import "./components/button-primary.scss";
 @import "./components/section-title.scss";
+@import "./blocks/title-withline.scss";
+@import "./blocks/input.scss";
+@import "./blocks/control-radio.scss";
+@import "./blocks/control-checkbox.scss";
 
 /* BLOCKS */
 @import "./blocks/header.scss";
@@ -23,3 +27,6 @@
 @import "./blocks/footer-links.scss";
 @import "./blocks/footer-socials.scss";
 @import "./blocks/footer-academy.scss";
+@import "./blocks/form-container.scss";
+@import "./blocks/title-inner.scss";
+@import "./blocks/title-inner-annotation.scss";

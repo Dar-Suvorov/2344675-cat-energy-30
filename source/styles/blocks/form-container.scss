@@ -1,0 +1,168 @@
+/* Контейнеры страницы form. */
+
+.form-container { /* Сама форма - Надконтейнер всей страницы подбора программы. */
+  /* НЕ вводить поля для всей страницы. Сделать через margin-left, margin-right. */
+  /* В десктопе центрует стакан на странице.
+  Полоски в десктопе до края экрана располагать абсолютно, ширина = calc() от 100% и следующего брейкпоинта.
+  Полоски в десктопе до края экрана располагать абсоюлтно, ширина = calc() от 100% и ширины родителя. */
+  position: relative;
+
+  @media (min-width: $bp_desktop) {
+    width: $desktop_width;
+    margin-left: auto;
+    margin-right: auto;
+    outline: 1px solid red;
+  }
+}
+
+.form-container__cat-all { /* Контейнер - Все данные о коте. */
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: calc(100% - 20px - 20px);
+  margin-left: 20px;
+
+  @media (min-width: $bp_tablet) {
+    width: calc(100% - 70px - 70px);
+    margin-left: 70px;
+  }
+
+  @media (min-width: $bp_desktop) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 80px;
+    width: $desktop_width;
+    margin-left: 0;
+    left: 0;
+    transform: translateX(calc(50% - 1220px / 2));
+  }
+}
+
+.form-container__cat-passport { /* Подконтейнер - "Паспорт" кота: кличка, вес, возраст. */
+      background-color: rgba(0, 255, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  @media (min-width: $bp_tablet) {
+    gap: 20px;
+  }
+
+  @media (min-width: $bp_desktop) {
+    width: 570px;
+}
+}
+
+.form-container__cat-goal { /* Надконтейнер - Цель программы: похудение, набор, нужна консультация. */
+      background-color: rgba(0, 0, 255, 0.1);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 100vw;
+    background-color: $special_border-3;
+    position: absolute;
+    top: 0;
+    left: calc(calc(-1 * (100vw - 100%) / 2));
+  }
+
+  &::after {
+    bottom: 0;
+  }
+
+  @media (min-width: $bp_tablet) {
+    outline: 1px solid $special_border-3;
+
+    &::before,
+    &::after {
+      content: none;
+    }
+  }
+
+  @media (min-width: $bp_desktop) {
+    width: 570px;
+  }
+}
+
+.form-container__owner-info { /* Контейнер - Информация о владельце */
+     background-color: rgba(255, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: calc(100% - 20px - 20px);
+  margin-left: 20px;
+
+  @media (min-width: $bp_tablet) {
+    width: calc(100% - 70px - 70px);
+    margin-left: 70px;
+    gap: 20px;
+  }
+
+  @media (min-width: $bp_desktop) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 81px;
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+.form-container__additives { /* Контейнер - список добавок. */
+     background-color: rgba(255, 255, 0, 0.1);
+  margin-left: 20px;
+  width: calc(100% - 20px - 20px);
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  margin-bottom: 34px;
+
+  @media (min-width: $bp_tablet) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 20px;
+      column-gap: 50px;
+    width: calc($bp_tablet - 70px - 70px);
+    margin-left: 70px;
+    margin-bottom: 52px;
+  }
+
+  @media (min-width: $bp_desktop) {
+    width: 100%;
+    column-gap: 40px;
+    margin-left: 0;
+    margin-bottom: 60px;
+  }
+}
+
+.form-container__order { /* Контейнер - кнопка заказа с комментарием */
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+  margin-bottom: 32px;
+}
+
+.form-container__comment {
+  font-size: 14px;
+  line-height: 16px;
+  width: max-content;
+  max-width: calc(100% - 20px - 20px);
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+  @media (min-width: $bp_tablet) {
+
+  }
+
+  @media (min-width: $bp_desktop) {
+
+  }
+}

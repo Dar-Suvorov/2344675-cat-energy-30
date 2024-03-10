@@ -1,0 +1,23 @@
+.title-inner {
+  font-family: "Oswald", sans-serif;
+  font-size: 36px;
+  line-height: 36px;
+  width: calc(100% - 20px - 20px);
+  margin-left: 20px;
+  margin-top: 27px;
+  margin-bottom: 37px;
+       background-color: aquamarine;
+
+  @media (min-width: $bp_tablet) {
+    font-size: 60px;
+    line-height: 60px;
+    width: calc(100% - 70px - 70px);
+    margin-left: 70px;
+    margin-bottom: 54px;
+  }
+
+  @media (min-width: $bp_desktop) {
+    width: 100%;
+    margin-left: 0;
+  }
+}

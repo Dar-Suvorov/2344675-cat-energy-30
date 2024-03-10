@@ -24,6 +24,7 @@
   display: block;
   width: 28px;
   height: 22px;
+  transition: background-color $anim-slow, opacity $anim-fast;
 
   &:hover,
   &:focus-visible {

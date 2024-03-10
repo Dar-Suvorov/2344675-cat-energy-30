@@ -9,11 +9,26 @@
   text-transform: uppercase;
   background-color: $basic_green;
   border: none;
-  max-width: 100%;
+  width: 100%;
   padding: 10px 20px;
   position: relative;
   z-index: 10;
   cursor: pointer;
+  transition: background-color $anim-slow, color $anim-fast;
+}
+
+.button-primary:hover {
+  background-color: $basic_green-2;
+}
+
+.button-primary:focus-visible {
+  background-color: $basic_green-2;
+  outline: 2px solid $outline-color;
+  outline-offset: -1px;
+}
+
+.button-primary:active {
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .button-primary--hero {
@@ -24,4 +39,10 @@
     font-size: 20px;
     line-height: 26px;
   }
+}
+
+.button-primary--form {
+  width: calc(100% - 20px - 20px);
+  margin-left: 20px;
+  margin-right: 20px;
 }
