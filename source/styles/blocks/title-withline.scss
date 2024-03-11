@@ -3,10 +3,19 @@
   font-size: 24px;
   line-height: 26px;
   width: max-content;
-  margin-left: 20px;
-  margin-right: 20px;
       background-color: yellow;
   position: relative;
+  margin: 23px 20px 34px;
+
+  @media (min-width: $bp_tablet) {
+    font-size: 36px;
+    line-height: 1em;
+    margin-bottom: 36px;
+  }
+
+  // @media (min-width: $bp_desktop) {
+  //   margin-bottom: 30px;
+  // }
 
   &::after {
     content: "";
@@ -16,6 +25,12 @@
     top: 15px;
     height: 2px;
     background-color: $basic_green;
+
+    @media (min-width: $bp_tablet) {
+      top: 20px;
+      width: calc(100vw - 100% - 20px - 20px - 72px);
+      left: calc(100% + 42px);
+    }
   }
 
   @media (min-width: $bp_tablet) {
@@ -28,7 +43,7 @@
       width: 30px;
       left: -70px;
       /* width: calc((100vw - 100%)); */ /* Предельные значения: а) текста нет совсем, тогда ширина п/элемента = 100 vw; б) текст занимает 100% ширины, тогда ширина п/элемента = ширина поля страницы. */
-      top: 15px;
+      top: 20px;
       height: 2px;
       background-color: $basic_green;
     }
@@ -56,7 +71,7 @@
   }
 
   &::after {
-      left: calc(100% + 10px);
-      width: calc(100vw - 100% - 20px - 10px);
+      left: calc(100% + 40px);
+      width: calc(100vw - 100% - 20px - 40px - 50px);
   }
 }

@@ -4,7 +4,7 @@
   justify-content: space-between;
   gap: 10px; /* Двойная ширина пробела прилегающей крупной надписи. */
   z-index: 10;
-  background-color: $basic_white;
+  background-color: $basic_grey;
 
   @media (min-width: $bp_tablet) {
     padding: 60px 70px;
@@ -12,6 +12,7 @@
   }
 
   @media (min-width: $bp_desktop) {
+    background-color: $basic_white;
     position: absolute;
     width: 565px;
     height: 199px;
@@ -20,6 +21,10 @@
     left: calc(50% - 610px);
     gap: 70px;
   }
+}
+
+.cooperate--index {
+  background-color: $basic_white;
 }
 
 .cooperate__encourage {
@@ -60,9 +65,5 @@
     font-size: 16px;
     line-height: 20px;
     text-align: right;
-  }
-
-  @media (min-width: $bp_tablet) {
-    text-align: left;
   }
 }

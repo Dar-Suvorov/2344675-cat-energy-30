@@ -4,7 +4,8 @@
   width: 230px;
   line-height: 18px;
   margin-left: 20px;
-  margin-bottom: 39px;
+  margin-bottom: 37px;
+  text-transform: uppercase;
       background-color: yellowgreen;
 
   @media (min-width: $bp_tablet) {
@@ -12,10 +13,11 @@
     line-height: 30px;
     width: 330px;
     margin-left: 70px;
-    margin-bottom: 65px;
+    margin-bottom: 62px;
   }
 
   @media (min-width: $bp_desktop) {
     margin-left: 0;
+    margin-bottom: 64px;
   }
 }

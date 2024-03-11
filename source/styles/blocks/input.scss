@@ -59,9 +59,13 @@
   line-height: inherit;
   color: inherit;
   text-transform: uppercase;
-  padding: 14px 15px 13px;
+  padding: 14px 15px 12px;
   flex-grow: 1;
   position: relative;
+
+  @media (min-width: $bp_tablet) {
+    padding: 14px 20px 12px;
+  }
 
   &:invalid:not(:placeholder-shown) { /* Обработка некорректного ввода. */
     outline: 2px solid #ff8282;
@@ -71,6 +75,10 @@
 .input--icon .input__input {
   padding-right: 43px;
   overflow: hidden;
+
+  @media (min-width: $bp_tablet) {
+    padding-bottom: 10px;
+  }
 }
 
 /* Поле ввода с иконкой. */
@@ -84,7 +92,7 @@
     // height: 100%;
     background-color: $basic_black;
     right: 0;
-    transform: translateX(calc(-20px + 50%));
+    transform: translateX(calc(-22px + 50%));
   }
 
   &:has(input:focus-visible)::after {
@@ -98,8 +106,8 @@
 
 .input--email::after {
   mask: url("../../images/icons/stack.svg#email");
-  width: 13px;
-  height: 17px;
+  width: 17px;
+  height: 13px;
 }
 
 .input--phone::after {
@@ -114,16 +122,24 @@
   resize: none;
   margin-left: 20px;
   border: 1px solid $special_grey-5;
-  padding: 14px 15px 13px;
+  padding: 18px 13px 13px 15px;
+  margin-bottom: 55px;
 
   @media (min-width: $bp_tablet) {
+    margin-top: 86px;
     margin-left: 70px;
     width: calc(100% - 70px - 70px);
+    height: 175px;
+    padding: 17px 19px 17px;
+    margin-bottom: 66px;
   }
 
   @media (min-width: $bp_desktop) {
+    margin-top: 77px;
     margin-left: 0;
     width: 100%;
+    padding-top: 14px;
+    margin-bottom: 72px;
   }
 
   &:focus-visible {

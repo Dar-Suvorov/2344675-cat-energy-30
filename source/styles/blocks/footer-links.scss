@@ -11,6 +11,13 @@
     padding-right: 30px;
     padding-bottom: 55px;
   }
+
+  @media (min-width: $bp_desktop) {
+    width: $desktop_width;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 47px 0 47px;
+  }
 }
 
 .footer-links__logo-link {

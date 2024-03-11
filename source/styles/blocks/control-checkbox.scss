@@ -7,7 +7,7 @@
   text-transform: uppercase;
   width: max-content;
   min-height: 40px;
-  padding-top: 12px;
+  padding-top: 7px;
   padding-left: 45px;
   transition: color $anim-slow, border-color $anim-slow;
 
@@ -86,6 +86,8 @@
   @media (min-width: $bp_tablet) {
     width: 285px; /* По ширине кнопки под списком дополнительных товаров. */
         outline: 1px solid red;
+    padding-left: 60px;
+    padding-top: 12px;
   }
 
   @media (min-width: $bp_desktop) {

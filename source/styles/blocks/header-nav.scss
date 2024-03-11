@@ -82,7 +82,40 @@
   }
 }
 
+.header-nav__link--current { /* Подчеркивание активного пункта меню. */
+  position: relative;
+  /* Остальные свойства вынесены в медиавыражения, чтобы не создавать псевдоэлемент в DOM-дереве мобильной версии. */
 
+  @media (min-width: $bp_tablet) {
+    &::after {
+      content: "";
+      width: 100%;
+      height: 2px;
+      background-color: $basic_green;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+  }
+
+  @media (min-width: $bp_desktop) { /* width и left - не по макету, но требуется для PP. Возможно, из-за особенностей рендера шрифтов.*/
+    &::after {
+      content: "";
+      width: calc(100% - 9px);
+      height: 2px;
+      background-color: $basic_green;
+      position: absolute;
+      left: 6px;
+      bottom: 0;
+    }
+  }
+}
+
+.header-nav__list--index .header-nav__link--current {
+  &::after {
+    background-color: $basic_white;
+  }
+}
 
 .header-nav__item {
   @media (min-width: $bp_tablet) {
@@ -128,6 +161,10 @@
 }
 
 
+
+
+
+
 /* @media (min-width: $bp_tablet) {
   .header-nav__link--current {
     position: relative;
@@ -144,31 +181,3 @@
   }
 } */
 
-.header-nav__link--current { /* Подчеркивание активного пункта меню. */
-  position: relative;
-  /* Остальные свойства вынесены в медиавыражения, чтобы не создавать псевдоэлемент в DOM-дереве мобильной версии. */
-
-  @media (min-width: $bp_tablet) {
-    &::after {
-      content: "";
-      width: 100%;
-      height: 2px;
-      background-color: $basic_green;
-      position: absolute;
-      left: 0;
-      bottom: 0;
-    }
-  }
-
-  @media (min-width: $bp_desktop) { /* width и left - не по макету, но требуется для PP. Возможно, из-за особенностей рендера шрифтов.*/
-    &::after {
-      content: "";
-      width: calc(100% - 9px);
-      height: 2px;
-      background-color: $basic_white;
-      position: absolute;
-      left: 6px;
-      bottom: 0;
-    }
-  }
-}
