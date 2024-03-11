@@ -1,4 +1,5 @@
-.input { /* Элементы ввода текста (строка, число, email, телефон, текст). */
+/* Элементы ввода текста (строка, число, email, телефон, текст). */
+.input {
   position: relative;
   font-family: "Oswald", sans-serif;
   font-size: 16px;
@@ -21,7 +22,8 @@
   }
 }
 
-.input--input { /* Собственно input, однострочное поле ввода строки. */
+/* Собственно input, однострочное поле ввода строки. */
+.input--input {
   width: 100%;
 }
 
@@ -29,12 +31,14 @@
   width: max-content;
 }
 
-.input__input:focus-visible { /* Поле ввода у любых элементов input. */
+/* Поле ввода у любых элементов input. */
+.input__input:focus-visible {
   outline: 2px solid $special_dark-grey;
 }
 
 .input--email,
 .input--phone {
+  // position: relative;
   @media (min-width: $bp_desktop) {
     width: 569px;
   }
@@ -48,8 +52,7 @@
 }
 
 .input--input input,
-.input--email input,
-.input--phone input {
+.input--icon input {
   border: 1px solid $special_grey-5;
   font-family: inherit;
   font-size: inherit;
@@ -58,8 +61,54 @@
   text-transform: uppercase;
   padding: 14px 15px 13px;
   flex-grow: 1;
+  position: relative;
+
+  &:invalid:not(:placeholder-shown) { /* Обработка некорректного ввода. */
+    outline: 2px solid #ff8282;
+  }
 }
 
+.input--icon .input__input {
+  padding-right: 43px;
+  overflow: hidden;
+}
+
+/* Поле ввода с иконкой. */
+.input--icon {
+  &::after {
+    content: "";
+    position: absolute;
+    // top: 0;
+    // right: 0;
+    // width: 44px;
+    // height: 100%;
+    background-color: $basic_black;
+    right: 0;
+    transform: translateX(calc(-20px + 50%));
+  }
+
+  &:has(input:focus-visible)::after {
+    background-color: $basic-green;
+  }
+
+  &:has(input:invalid:not(:placeholder-shown))::after {
+    background-color: $status_error;
+  }
+}
+
+.input--email::after {
+  mask: url("../../images/icons/stack.svg#email");
+  width: 13px;
+  height: 17px;
+}
+
+.input--phone::after {
+  mask: url("../../images/icons/stack.svg#phone");
+  width: 15px;
+  height: 15px;
+}
+
+/* Многострочное поле ввода. */
 .input--textarea {
   width: calc(100% - 20px - 20px);
   resize: none;
