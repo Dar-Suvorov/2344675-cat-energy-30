@@ -1,0 +1,89 @@
+.card {
+      outline: 1px solid green;
+  border-bottom: 1px solid $special_grey-2;
+  min-width: 280px;
+  min-height: 209px;
+
+  @media (min-width: $bp_tablet) {
+    width: 324px;
+    min-height: 511px;
+    padding: 20px 37px 40px;
+  }
+}
+
+.card__wrapper { /* Обертка для всей карточки, кроме кнопки. */
+  padding: 0 0 18px;
+  display: flex;
+
+  @media (min-width: $bp_tablet) {
+    flex-direction: column;
+  }
+}
+
+.card__image-container { /* Контейнер для фото; ссылка на страницу товара */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 107px;
+      outline: 1px solid orange;
+
+  @media (min-width: $bp_tablet) {
+    width: 200px;
+    height: 210px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.card__image {
+  display: block; /* Для устранения базовой линии. */
+}
+
+.card__info { /* Обертка для всей текстовой информации в карточке. */
+      outline: 1px solid blue;
+  width: 50%;
+
+  @media (min-width: $bp_tablet) {
+
+  }
+}
+
+.card__name { /* Назвнаие товара; ссылка на страницу товара */
+  display: block;
+  width: 100%;
+  padding-top: 3px;
+  padding-right: 40%;
+  margin-bottom: 14px;
+      background-color: skyblue;
+  font-family: "Oswald", sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: uppercase;
+}
+
+.card__parameters { /* Таблица параметров (свойств) товара. */
+      outline: 1px solid red;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.card__parameter-name,
+.card__parameter-value { /* Название параметра. */
+      background-color: rgba(255, 0, 0, 0.2);
+  width: 50%;
+  font-size: 12px;
+  line-height: 16px;
+
+  @media (min-width: $bp_tablet) {
+    border-bottom: 1px solid $special_grey;
+  }
+}
+
+.card__parameter-value { /* Значение параметра. */
+     background-color: rgba(0, 0, 255, 0.2);
+  margin-left: 0;
+  text-align: right;
+}
