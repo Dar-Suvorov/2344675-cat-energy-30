@@ -24,12 +24,16 @@
 }
 
 .title-inner--catalog {
-  /* может быть, надо будет подпправить m-b в каталоге, сдвигает остальное на 1px. */
+  margin-bottom: 57px;
 
   @media (min-width: $bp_tablet) {
     width: 708px;
-    margin-left: auto;
+    margin-left: calc((100% - 100vw) / 2 + 30px);
     margin-right: auto;
     margin-bottom: 84px;
+  }
+
+  @media (min-width: $bp_desktop) {
+    margin-left: calc((100% - $desktop_width) / 2);
   }
 }

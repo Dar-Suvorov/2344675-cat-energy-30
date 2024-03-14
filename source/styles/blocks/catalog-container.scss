@@ -31,6 +31,13 @@
   @media (min-width: $bp_tablet) {
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 60px;
+  }
+
+  @media (min-width: $bp_desktop) {
+    width: $desktop_width;
+    column-gap: 80px;
+    row-gap: 63px;
   }
 }

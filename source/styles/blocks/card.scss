@@ -3,11 +3,31 @@
   border-bottom: 1px solid $special_grey-2;
   min-width: 280px;
   min-height: 209px;
+  position: relative;
 
   @media (min-width: $bp_tablet) {
     width: 324px;
     min-height: 511px;
-    padding: 20px 37px 40px;
+    padding: 6px 37px 40px;
+  }
+
+  @media (min-width: $bp_desktop) {
+    width: 245px;
+    min-width: 245px;
+    padding-top: 7px;
+  }
+
+  &::before {
+    @media (min-width: $bp_tablet) {
+      content: "";
+      background-color: $basic_grey;
+      width: 100%;
+      height: calc(100% - 81px);
+      position: absolute;
+      left: 0;
+      bottom: 3px;
+      z-index: -1;
+    }
   }
 }
 
@@ -17,6 +37,7 @@
 
   @media (min-width: $bp_tablet) {
     flex-direction: column;
+    padding-bottom: 33px;
   }
 }
 
@@ -33,6 +54,12 @@
     height: 210px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 14px;
+  }
+
+  @media (min-width: $bp_desktop) {
+    width: 169px;
+    margin-bottom: 13px;
   }
 }
 
@@ -45,7 +72,7 @@
   width: 50%;
 
   @media (min-width: $bp_tablet) {
-
+    width: 100%;
   }
 }
 
@@ -60,6 +87,23 @@
   font-size: 16px;
   line-height: 20px;
   text-transform: uppercase;
+
+  @media (min-width: $bp_tablet) {
+    font-size: 20px;
+    line-height: 24px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 10px;
+    margin-bottom: 11px;
+    text-align: center;
+  }
+
+  @media (min-width: $bp_desktop) {
+    padding-top: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 18px;
+  }
 }
 
 .card__parameters { /* Таблица параметров (свойств) товара. */
@@ -68,22 +112,35 @@
   flex-wrap: wrap;
   margin-top: 0;
   margin-bottom: 0;
+  font-size: 12px; /* Наследуется в <dt> и <dd>. */
+  line-height: 16px; /* Наследуется в <dt> и <dd>. */
+
+  @media (min-width: $bp_tablet) {
+    font-size: 16px;
+    line-height: 20px;
+  }
 }
 
 .card__parameter-name,
 .card__parameter-value { /* Название параметра. */
       background-color: rgba(255, 0, 0, 0.2);
   width: 50%;
-  font-size: 12px;
-  line-height: 16px;
 
   @media (min-width: $bp_tablet) {
     border-bottom: 1px solid $special_grey;
+    padding-top: 7px;
+    padding-bottom: 4px;
+  }
+
+  @media (min-width: $bp_desktop) {
+    padding-top: 5px;
+    padding-bottom: 7px;
   }
 }
 
 .card__parameter-value { /* Значение параметра. */
-     background-color: rgba(0, 0, 255, 0.2);
+      background-color: rgba(0, 0, 255, 0.2);
   margin-left: 0;
   text-align: right;
+  padding-left: 10px; /* Чтобы избежать возможного склеивания текста параметра с текстом значения. */
 }
