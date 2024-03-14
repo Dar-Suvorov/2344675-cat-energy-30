@@ -1,0 +1,73 @@
+.card-showmore {
+      outline: 1px solid limegreen;
+  padding: 61px 0 20px;
+  position: relative;
+
+  &::before { /* Горизонтальная часть плюса. */
+    content: "";
+    display: block;
+    width: 30px;
+    height: 2px;
+    background-color: $special_gray-7;
+    position: absolute;
+    top: 21px;
+    left: calc(50% - 15px);
+  }
+
+  &::after { /* Вертикальная часть плюса. */
+    content: "";
+    display: block;
+    width: 2px;
+    height: 30px;
+    background-color: $special_gray-7;
+    position: absolute;
+    top: 8px;
+    left: calc(50% - 1px);
+  }
+}
+
+.card-showmore__title {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 7px;
+  padding-left: 1em;
+  padding-right: 1em;
+      background-color: skyblue;
+  font-family: "Oswald", sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  color: $special_black;
+  text-transform: uppercase;
+  text-align: center;
+
+  @media (min-width: $bp_tablet) {
+    // font-size: 20px;
+    // line-height: 24px;
+    // padding-left: 40px;
+    // padding-right: 40px;
+    // padding-top: 10px;
+    // margin-bottom: 11px;
+    // text-align: center;
+  }
+
+  @media (min-width: $bp_desktop) {
+    // padding-top: 0;
+    // padding-left: 10px;
+    // padding-right: 10px;
+    // margin-bottom: 18px;
+  }
+}
+
+.card-showmore__description {
+  display: block;
+  width: 100%;
+  padding-left: 1em;
+  padding-right: 1em;
+  font-size: 12px;
+  line-height: 16px;
+      background-color: lightsalmon;
+  color: $special_dark-grey;
+  text-align: center;
+  margin-bottom: 22px;
+}

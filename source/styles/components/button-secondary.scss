@@ -1,0 +1,24 @@
+.button-secondary {
+  display: block;
+  font-family: "Oswald", sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  color: $special_dark-grey;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: $basic_grey;
+  border: none;
+  width: 100%;
+  padding: 10px 20px;
+  position: relative;
+  z-index: 10;
+  cursor: pointer;
+  transition: background-color $anim-slow, color $anim-fast;
+}
+
+.button-secondary:hover,
+.button-secondary:focus-visible,
+.button-secondary:active {
+  background-color: $special_grey-2;
+}
