@@ -1,14 +1,17 @@
 .card {
-      outline: 1px solid green;
+      // outline: 1px solid green;
   border-bottom: 1px solid $special_grey-2;
   min-width: 280px;
   min-height: 209px;
   position: relative;
 
   @media (min-width: $bp_tablet) {
+    border-bottom: none;
     width: 324px;
     min-height: 511px;
-    padding: 6px 37px 40px;
+    padding: 5px 37px 43px;
+    display: flex;
+    flex-direction: column;
   }
 
   @media (min-width: $bp_desktop) {
@@ -38,6 +41,7 @@
   @media (min-width: $bp_tablet) {
     flex-direction: column;
     padding-bottom: 33px;
+    flex-grow: 1;
   }
 }
 
@@ -47,7 +51,7 @@
   align-items: center;
   width: 50%;
   height: 107px;
-      outline: 1px solid orange;
+      // outline: 1px solid orange;
 
   @media (min-width: $bp_tablet) {
     width: 200px;
@@ -68,7 +72,7 @@
 }
 
 .card__info { /* Обертка для всей текстовой информации в карточке. */
-      outline: 1px solid blue;
+      // outline: 1px solid blue;
   width: 50%;
 
   @media (min-width: $bp_tablet) {
@@ -82,7 +86,7 @@
   padding-top: 3px;
   padding-right: 40%;
   margin-bottom: 14px;
-      background-color: skyblue;
+      // background-color: skyblue;
   font-family: "Oswald", sans-serif;
   font-size: 16px;
   line-height: 20px;
@@ -94,7 +98,7 @@
     padding-left: 40px;
     padding-right: 40px;
     padding-top: 10px;
-    margin-bottom: 11px;
+    margin-bottom: 13px;
     text-align: center;
   }
 
@@ -107,7 +111,7 @@
 }
 
 .card__parameters { /* Таблица параметров (свойств) товара. */
-      outline: 1px solid red;
+      // outline: 1px solid red;
   display: flex;
   flex-wrap: wrap;
   margin-top: 0;
@@ -123,7 +127,7 @@
 
 .card__parameter-name,
 .card__parameter-value { /* Название параметра. */
-      background-color: rgba(255, 0, 0, 0.2);
+      // background-color: rgba(255, 0, 0, 0.2);
   width: 50%;
 
   @media (min-width: $bp_tablet) {
@@ -139,7 +143,7 @@
 }
 
 .card__parameter-value { /* Значение параметра. */
-      background-color: rgba(0, 0, 255, 0.2);
+      // background-color: rgba(0, 0, 255, 0.2);
   margin-left: 0;
   text-align: right;
   padding-left: 10px; /* Чтобы избежать возможного склеивания текста параметра с текстом значения. */
