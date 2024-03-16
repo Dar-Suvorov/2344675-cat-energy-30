@@ -14,11 +14,27 @@
 }
 
 .catalog-container--goods {
+  margin-bottom: 30px;
 
+  @media (min-width: $bp_tablet) {
+    margin-bottom: 67px;
+  }
+
+  @media (min-width: $bp_desktop) {
+    margin-bottom: 74px;
+  }
 }
 
 .catalog-container--additives {
+  margin-bottom: 35px;
 
+  @media (min-width: $bp_tablet) {
+    margin-bottom: 75px;
+  }
+
+  @media (min-width: $bp_desktop) {
+    margin-bottom: 87px;
+  }
 }
 
 .catalog-container__cards {

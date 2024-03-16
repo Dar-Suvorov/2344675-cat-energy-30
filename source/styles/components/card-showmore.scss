@@ -1,25 +1,26 @@
 .card-showmore {
       // outline: 1px solid limegreen;
-  padding: 61px 0 20px;
+  padding: 78px 0 20px;
   position: relative;
 
   @media (min-width: $bp_tablet) {
     width: 324px;
-    margin-top: 80px;
+    margin-top: 79px;
     outline: 2px solid $basic_grey;
-    min-height: 431px; /* высота обычной карточки 511px - воздух сверху 80px */
-    padding: 160px 37px 43px;
+    min-height: 426px; /* высота обычной карточки 511px - воздух сверху 80px */
+    padding: 160px 37px 38px;
     display: flex; /* Для размещения кнопки внизу псевдокарточки. */
     flex-direction: column;
+    margin-bottom: 6px;
   }
 
   @media (min-width: $bp_desktop) {
     width: 245px;
     min-width: 245px;
-    padding-top: 149px;
-    min-height: 426px;
+    padding-top: 151px;
+    min-height: 427px;
     height: 426px;
-    margin-bottom: 5px;
+    margin-bottom: 6px;
     padding-bottom: 38px;
   }
 
@@ -30,7 +31,7 @@
     height: 2px;
     background-color: $special_gray-7;
     position: absolute;
-    top: 21px;
+    top: 39px;
     left: calc(50% - 15px);
 
     @media (min-width: $bp_tablet) {
@@ -51,7 +52,7 @@
     height: 30px;
     background-color: $special_gray-7;
     position: absolute;
-    top: 8px;
+    top: 25px;
     left: calc(50% - 1px);
 
     @media (min-width: $bp_tablet) {

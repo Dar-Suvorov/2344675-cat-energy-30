@@ -1,0 +1,84 @@
+.additives {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+
+  @media (min-width: $bp_tablet) {
+    gap: 68px;
+  }
+
+  @media (min-width: $bp_desktop) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 79px;
+  }
+}
+
+.additives__bonus {
+  display: block;
+  width: 100%;
+  min-height: 290px;
+  background-color: $basic_green-2;
+  color: $basic_white;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  padding: 187px 58px 43px;
+  background-image: url("../../images/cat-bag-mobile@1x.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+
+  @media (max-width: 767px) and (min-resolution: 2dppx) {
+    background-image: url("../../images/cat-bag-mobile@2x.jpg");
+  }
+
+  @media (min-width: $bp_tablet) {
+    min-height: 200px;
+    text-align: left;
+    padding: 71px 125px 69px 421px; /* Padding слева фиксирован, при расширении страницы будет увеличиваться блок текста. */
+    background-image: url("../../images/cat-bag-tablet@1x.jpg");
+  }
+
+  @media (min-width: $bp_tablet) and (min-resolution: 2dppx) {
+    background-image: url("../../images/cat-bag-tablet@2x.jpg");
+  }
+
+  @media (min-width: $bp_desktop) {
+    width: 245px;
+    min-height: 288px;
+    text-align: center;
+    padding: 185px 42px 43px;
+    background-image: url("../../images/cat-bag-desktop@1x.jpg");
+  }
+
+  @media (min-width: $bp_desktop) and (min-resolution: 2dppx) {
+    background-image: url("../../images/cat-bag-desktop@2x.jpg");
+  }
+
+  &::before { /* Иконка подарка */
+    content: "";
+    display: block;
+    width: 80px;
+    height: 80px;
+    background-image: url("../../images/icons/stack.svg#gift");
+    position: absolute;
+    top: 59px;
+    left: calc(50% - 40px);
+
+    @media (min-width: $bp_tablet) {
+      width: 81px;
+      height: 81px;
+      top: 58px;
+      left: 77px;
+    }
+
+    @media (min-width: $bp_desktop) {
+      width: 82px;
+      height: 82px;
+      top: 57px;
+      left: calc(50% - 40px);
+    }
+  }
+}

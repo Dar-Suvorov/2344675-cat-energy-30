@@ -17,7 +17,7 @@
   //   margin-bottom: 30px;
   // }
 
-  &::after {
+  &::after { /* Зеленая линия справа. */
     content: "";
     position: absolute;
     width: calc(100vw - 100% - 20px - 20px);
@@ -37,7 +37,7 @@
     margin-left: 70px;
     margin-right: 70px;
 
-    &::before {
+    &::before { /* Зеленая линия слева. */
       content: "";
       position: absolute;
       width: 30px;
@@ -46,6 +46,16 @@
       top: 20px;
       height: 2px;
       background-color: $basic_green;
+
+      @media (min-width: $bp_tablet) {
+        left: calc(-1* (100vw - $tablet_width) / 2);
+        width: calc((100vw - $tablet_width) / 2 - 40px);
+      }
+
+      @media (min-width: $bp_desktop) {
+        left: calc(-1* (100vw - $desktop_width) / 2);
+        width: calc((100vw - $desktop_width) / 2 - 40px);
+      }
     }
   }
 
@@ -73,5 +83,19 @@
   &::after {
       left: calc(100% + 40px);
       width: calc(100vw - 100% - 20px - 40px - 50px);
+  }
+}
+
+.title-withline--catalog {
+  margin-left: 0;
+
+  @media (min-width: $bp_tablet) {
+    margin-left: 40px;
+    margin-bottom: 79px;
+  }
+
+  @media (min-width: $bp_desktop) {
+    margin-left: 0;
+    margin-bottom: 78px;
   }
 }

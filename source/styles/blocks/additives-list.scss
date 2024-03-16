@@ -1,0 +1,150 @@
+.additives-list {
+  display: flex;
+  flex-direction: column;
+  background-color: $special_grey; /* Цвет линий */
+  gap: 1px; /* Внутренние линии */
+  padding-top: 1px; /* Верхняя линия */
+  padding-bottom: 1px; /* НИжняя линия */
+  font-size: 16px;
+  line-height: 16px;
+  color: $special_dark-grey-2;
+
+  @media (min-width: $bp_tablet) {
+    outline: 1px solid $special_grey;
+    padding-left: 1px;
+    padding-right: 1px;
+    /* Альтернативный способ:
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    */
+  }
+
+  @media (min-width: $bp_desktop) {
+    outline: none;
+    padding-left: 0;
+    padding-right: 0;
+    height: min-content; /* Предотвращает распространение цвета фона на всё пространство вниз, в случае увеличения высоты соседнего изображения. */
+    width: 896px;
+  }
+}
+
+.additives-list__item {
+  background-color: $basic_white;
+  padding-top: 13px;
+  padding-bottom: 19px;
+
+  @media (min-width: $bp_tablet) {
+    padding: 26px 37px 28px;
+  }
+
+  @media (min-width: $bp_desktop) {
+    display: flex;
+    gap: 40px;
+    justify-content: space-between;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 15px;
+    padding-bottom: 12px;
+  }
+}
+
+.additives-list__line {
+  display: flex;
+  flex-wrap: wrap;
+    row-gap: 10px;
+    // column-gap: 10px; /* ПРедотвращение слипания элементов. */
+  padding-bottom: 10px;
+  justify-content: space-between;
+  margin-bottom: 6.5px;
+
+  @media (min-width: $bp_tablet) {
+    // align-items: flex-end;
+    margin-bottom: 14px;
+  }
+
+  @media (min-width: $bp_desktop) {
+    width: 610px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 12px;
+    padding-bottom: 5px;
+    margin-bottom: 7px;
+  }
+}
+
+.additives-list__name {
+      background-color: rgba(255,0,0,0.2);
+  font-family: "Oswald", sans-serif;
+  color: $special_dark-grey-2;
+  font-size: 16px;
+  line-height: 16px;
+  text-transform: uppercase;
+  display: inline-block;
+  width: 100%;
+
+  @media (min-width: $bp_tablet) {
+    // flex-grow: 1;
+    width: 316px; /* 632px (внутренний размер блока) / 2. */
+    padding-right: 1em;
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  @media (min-width: $bp_desktop) {
+    width: 325px;
+    padding-right: 5px;
+  }
+}
+
+.additives-list__packing {
+      background-color: rgba(0,255,0,0.2);
+  color: $special_dark-grey;
+  font-size: 14px;
+  line-height: 14px;
+  display: inline-block;
+  flex-grow: 1;
+  max-width: 50%;
+
+  @media (min-width: $bp_tablet) {
+    // flex-grow: 0;
+    text-align: right;
+    max-width: 224px; /* 632px (100%) - 316px (50%) - 92px. */
+    flex-grow: 0;
+    font-size: 16px;
+    line-height: 16px;
+    flex-grow: 1;
+    align-self: flex-end;
+  }
+
+  @media (min-width: $bp_desktop) {
+      width: 200px;
+    padding-right: 5px;
+    padding-bottom: 2px;
+    text-align: left;
+  }
+}
+
+.additives-list__price {
+      background-color: rgba(0,0,255,0.2);
+  color: $special_dark-grey;
+  font-size: 14px;
+  line-height: 14px;
+  display: inline-block;
+  text-align: right;
+  max-width: 50%;
+
+  @media (min-width: $bp_tablet) {
+    width: 87px;
+    padding-left: 5px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  @media (min-width: $bp_desktop) {
+    width: 84px;
+    text-align: right;
+  }
+}
+

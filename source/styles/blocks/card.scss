@@ -4,6 +4,7 @@
   min-width: 280px;
   min-height: 209px;
   position: relative;
+  padding-top: 20px;
 
   @media (min-width: $bp_tablet) {
     border-bottom: none;
@@ -35,7 +36,7 @@
 }
 
 .card__wrapper { /* Обертка для всей карточки, кроме кнопки. */
-  padding: 0 0 18px;
+  padding: 0 0 17px;
   display: flex;
 
   @media (min-width: $bp_tablet) {
@@ -83,7 +84,7 @@
 .card__name { /* Назвнаие товара; ссылка на страницу товара */
   display: block;
   width: 100%;
-  padding-top: 3px;
+  padding-top: 1px;
   padding-right: 40%;
   margin-bottom: 14px;
       // background-color: skyblue;

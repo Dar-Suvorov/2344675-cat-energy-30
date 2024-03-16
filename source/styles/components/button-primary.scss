@@ -15,6 +15,7 @@
   z-index: 10;
   cursor: pointer;
   transition: background-color $anim-slow, color $anim-fast;
+  height: min-content;
 }
 
 .button-primary:hover {
@@ -58,5 +59,11 @@
 
   @media (min-width: $bp_desktop) {
     width: 570px;
+  }
+}
+
+.button-primary--catalog-desktop {
+  @media (min-width: $bp_desktop) {
+    width: 244px;
   }
 }
