@@ -23,12 +23,11 @@
         <img src="images/logo-mobile.svg" width="33" height="38" alt="Логотип магазина Cat Energy.">
       </picture>
     </a>
-    <nav class="header-nav">
-      <button class="header-nav__button-burger" type="button">
-<!--         <img src="images/header-burgermenu.svg" width="24" height="24" alt="кнопка навигации">
- -->        <span class="visually-hidden">Открыть меню.</span>
+    <nav class="header-nav header-nav--no-js">
+      <button class="header-nav__button-menu" type="button">
+        <span class="visually-hidden">Vеню.</span>
       </button>
-      <ul class="header-nav__list"> <!-- добавить класс header-nav__list--no-js -->
+      <ul class="header-nav__list">
         <li class="header-nav__item">
           <a class="header-nav__link" href="index.html" aria-current="page">Главная</a>
         </li>
@@ -42,26 +41,27 @@
     </nav>
   </header>
 
-  <main>
+  <main class="main">
     <form class="form-container" action="https://echo.htmlacademy.ru/" method="get">
-      <h1 class="title-inner">Подбор программы</h1>
-      <div class="title-inner-annotation"> Заполните анкету, и&nbsp;мы подберем программу питания для вашего кота</div>
-      <div class="form-container form-container__cat-all">
-        <ul class="form-container form-container__cat-passport">
+      <h1 class="title-inner title-inner--program">Подбор программы</h1>
+      <div class="title-inner title-inner--annotation">Заполните анкету, и&nbsp;мы подберем программу питания для вашего кота</div>
+      <div class="form-container form-container--cat-all">
+        <ul class="form-container form-container--cat-passport">
           <li class="input input--input">
             <label for="cat-name">Имя:*</label>
             <input class="input__input" name="cat-name" id="cat-name" type="text" value="Барсик" required>
           </li>
           <li class="input input--input">
             <label for="cat-weight">Вес&nbsp;(кг):*</label>
-            <input class="input__input" name="cat-weight" id="cat-weight" type="number" value="7" min="0" step="0.5" required>
+            <input class="input__input" name="cat-weight" id="cat-weight" type="number" value="7" required><!-- Следует добавить min="0", но линтер считает ошибкой более 6 атрибутов. -->
           </li>
           <li class="input input--input">
             <label for="cat-age">Возраст&nbsp;(лет):</label>
-            <input class="input__input" name="cat-age" id="cat-age" type="number" value="7" min="0" step="0.5">
+            <input class="input__input" name="cat-age" id="cat-age"
+            type="number" value="7" min="0">
           </li>
         </ul>
-        <ul class="form-container form-container__cat-goal">
+        <ul class="form-container form-container--cat-goal">
           <li class="control-radio">
             <input class="visually-hidden control-radio__input" type="radio" name="program" value="slim" id="slim" checked>
             <label class="control-radio__label" for="slim">Похудение</label>
@@ -77,9 +77,9 @@
         </ul>
       </div>
       <h2 class="title-withline title-withline--two-line">Контактные данные (владельца кота)</h2>
-      <ul class="form-container form-container__owner-info">
+      <ul class="form-container form-container--owner-info">
         <li class="input input--icon input--email">
-          <label for="email">E-mail:*</label>
+          <label for="email">E&#8209;mail:*</label>
           <input class="input__input" name="email" id="email" type="email" value="kuklachev@gmail.com" required>
         </li>
         <li class="input input--icon input--phone">
@@ -88,9 +88,9 @@
         </li>
       </ul>
       <h2 class="title-withline">Комментарий</h2>
-      <textarea class="input input--textarea" id="cat-habits" name="cat-habits" placeholder="Расскажите о вашем коте." rows=5>Расскажите обо всех повадках кота</textarea> <!-- В макете этот текст выглядит как содержимое, а не плейсхолдер. В разметке текст другой, чтобы не сбивать с толку пользователя (он только что удалил текст, и вот текст снова появился). Если на бек будет приходить строка, заданная по умолчанию - значит, пользователь ее не изменял, и ее можно отфильтровать перед импортом в базу заказов. -->
+      <textarea class="input input--textarea" id="cat-habits" name="cat-habits" placeholder="Расскажите о вашем коте" rows=5>Расскажите обо всех повадках кота</textarea>
       <h2 class="title-withline">Дополнительно</h2>
-      <ul class="form-container form-container__additives">
+      <ul class="form-container form-container--additives">
         <li class="control-checkbox control-checkbox--additive">
           <input class="visually-hidden control-checkbox__input" type="checkbox" name="additives" value="sweetener" id="sweetener" checked>
           <label class="control-checkbox__label" for="sweetener">сахарозаменитель</label>
@@ -108,9 +108,9 @@
           <label class="control-checkbox__label" for="vitamins">витамины</label>
         </li>
       </ul>
-      <div class="form-container form-container__order"> <!-- В десктопной и планшетной - в строку, в мобильной - в столбик. -->
+      <div class="form-container form-container--order">
         <button class="button-primary button-primary--form" type="submit">отправить заявку</button>
-        <div class="form-container form-container__comment">* — Обязательные поля</div>
+        <div class="form-container form-container--comment">* — Обязательные поля</div>
       </div>
     </form>
   </main>
@@ -163,7 +163,7 @@
           </a>
         </li>
       </ul>
-      <a class="footer-academy" href="https://htmlacademy.ru/">
+      <a class="footer-academy" href="https://htmlacademy.ru/intensive/adaptive">
         <p class="footer-academy__name">HTML Academy</p>
         <svg class="footer-academy__logo" width="27" height="34" viewBox="0 0 27 34" fill="none"
           xmlns="http://www.w3.org/2000/svg">

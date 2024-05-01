@@ -1,6 +1,19 @@
 .header {
+  display: flex;
+  flex-direction: column;
+  padding: 13px 0 0;
+  border-bottom: 1px solid $special_border-2;
+  background-image: url("../../images/logo-text.svg");
+  background-position: center 23px;
+  background-repeat: no-repeat;
+  background-size: 101px 18px;
+
   @media (min-width: $bp_tablet) {
     padding: 25px 10px;
+    border-bottom: none;
+    flex-direction: row;
+    justify-content: space-between;
+    background-image: none;
   }
 
   @media (min-width: $bp_desktop) {
@@ -9,30 +22,17 @@
     margin-right: auto;
     padding: 55px 0 0;
   }
-  padding: 13px 0 0;
-
-  display: flex;
-
-  @media (min-width: $bp_tablet) {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  flex-direction: column;
-
-  @media (min-width: $bp_tablet) {
-    background-image: none;
-  }
-  background-image: url("../../images/logo-text.svg"); /* TODO: вставить через стек */
-  background-position: center 23px;
-  background-repeat: no-repeat;
-  background-size: 101px 18px;
 }
 
 .header__logo {
   display: block;
   transition: opacity $anim-slow;
   outline-offset: 5px;
-  /* Исправвляем дефолтную рамку вокруг img логотипа(инлайнового). Если не задавать ширину, то браузерный фокус подсвечивает весь блок, а он тянется на ширину родителя. Это не соответствует разметке, и к тому же поверх будет находиться кнопка меню. width: min-content использовать нельзя, в блоке логотипа нет содержимого. Потэтому ширина задана принудительно. */
+
+  /* Исправвляет дефолтную рамку вокруг img логотипа(инлайнового). Если не задавать ширину, то браузерный фокус подсвечивает весь блок, а он тянется на ширину родителя. Это не соответствует разметке, и к тому же поверх будет находиться кнопка меню. width: min-content использовать нельзя, в блоке логотипа нет содержимого. Потэтому ширина задана принудительно. */
+  width: 33px;
+  height: 38px;
+
   @media (min-width: $bp_tablet) {
     width: 176px;
     height: 50px;
@@ -42,16 +42,15 @@
     width: 202px;
     height: 59px;
   }
-  width: 33px;
-  height: 38px;
 
   /* Позиционирование логотипа */
+  margin-left: 20px;
+  margin-bottom: 14px;
+
   @media (min-width: $bp_desktop) {
     margin-left: 0;
     margin-bottom: 0;
   }
-  margin-left: 20px;
-  margin-bottom: 14px;
 
   &:hover {
     opacity: 0.8;

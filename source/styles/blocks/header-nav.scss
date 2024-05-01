@@ -1,4 +1,6 @@
 .header-nav {
+  position: relative;
+
   @media (min-width: $bp_tablet) {
     max-width: calc(100vw - 194px - 37px); /* Меню расположено по правому краю шапки; логотип с шириной 174px и левым margin 20px используем в качестве левого margin меню; 23px - аналог отступа между элементами меню, 15px - дополнительный воздух от меню до логотипа. */
     position: relative;
@@ -9,28 +11,28 @@
   }
 }
 
-.header-nav__button-burger {
-  @media (min-width: $bp_tablet) {
-    display: none;
-  }
-
+.header-nav__button-menu {
   cursor: pointer;
   width: 31px; /* 21px по макету + по 5px на область тапа */
   height: 31px;
   border: none;
   background-color: transparent;
-  background-image: url("../../images/header-closemenu.svg"); /* При свернутом меню изменять фоновое изображение на header-burgermenu.svg */ /* TODO: подключить через стек */
-  /* background-image: url("../../images/header-burgermenu.svg"); */ /* Для отладки */
-  background-size: 21px 21px;
+  background-image: url("../../images/icons/stack.svg#header-burgermenu");
+  background-size: 25px 25px;
   background-repeat: no-repeat;
   background-position: center;
   position: absolute;
-  top: 15px;
-  right: 14px;
+  top: -49px;
+  right: 17px;
+
+  @media (min-width: $bp_tablet) {
+    display: none;
+  }
 }
 
 .header-nav__list {
-  display: none; /* При наличии класса header-nav__list--no-js становится Flex. */
+  @include normalize-ul;
+  border-bottom: 1px solid $special_border;
 
   @media (min-width: $bp_tablet) {
     display: flex;
@@ -51,8 +53,6 @@
     column-gap: 27px;
     letter-spacing: 1px; /* Не указан в Figma, но нужен по PP. */
   }
-
-  border-bottom: 1px solid $special_border;
 }
 
 .header-nav__list--no-js { /* По умолчанию, без JS, меню видно. */
@@ -67,7 +67,6 @@
 
   &::before {
     @media (min-width: $bp_desktop) {
-      /* (index) Зеленый фон позади header и main / Hero */
       /* Формирует зеленый фон от верха меню (внахлест) до верхнего края страницы. */
       content: "";
       display: block;
@@ -82,7 +81,77 @@
   }
 }
 
-.header-nav__link--current { /* Подчеркивание активного пункта меню. */
+.header-nav__list--index .header-nav__link--current {
+  @media (min-width: $bp_desktop) {
+    &::after {
+      background-color: $basic_white;
+    }
+  }
+}
+
+.header-nav__item {
+  display: block;
+  text-align: center;
+  border-top: 1px solid $special_border;
+
+  @media (min-width: $bp_tablet) {
+    border: none;
+  }
+}
+
+.header-nav__link {
+  display: block;
+  padding-top: 24px;
+  padding-bottom: 21px;
+  padding-left: 22px; /* Боковые поля не могут быть меньше вертикальных */
+  padding-right: 22px;
+  font-family: "Oswald", "Arial", sans-serif;
+  font-size: 20px;
+  line-height: 20px;
+  text-transform: uppercase;
+  transition: opacity $anim-slow;
+  max-width: 100%;
+  overflow: hidden;
+  overflow-wrap: break-word;
+
+  @media (max-width: $bp_mobile-max) {
+    background-color: $basic_white;
+  }
+
+  @media (min-width: $bp_tablet) {
+    font-size: 18px;
+    line-height: 24px;
+    padding-top: 14px;
+    padding-bottom: 10px;
+    padding-left: 3px;
+    padding-right: 3px;
+    max-width: 550px;
+    position: relative;
+    z-index: 10;
+  }
+
+  &:hover {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  &:active {
+    color: rgba(0, 0, 0, 0.3);
+  }
+}
+
+.header-nav__list--index .header-nav__link:hover {
+  @media (min-width: $bp_desktop) {
+    color: rgba(255, 255, 255, 0.6);
+  }
+}
+
+.header-nav__list--index .header-nav__link:active {
+  @media (min-width: $bp_desktop) {
+    color: rgba(255, 255, 255, 0.3);
+  }
+}
+
+.header-nav__link--current {
   position: relative;
   /* Остальные свойства вынесены в медиавыражения, чтобы не создавать псевдоэлемент в DOM-дереве мобильной версии. */
 
@@ -98,7 +167,7 @@
     }
   }
 
-  @media (min-width: $bp_desktop) { /* width и left - не по макету, но требуется для PP. Возможно, из-за особенностей рендера шрифтов.*/
+  @media (min-width: $bp_desktop) {
     &::after {
       content: "";
       width: calc(100% - 9px);
@@ -111,73 +180,36 @@
   }
 }
 
-.header-nav__list--index .header-nav__link--current {
-  &::after {
-    background-color: $basic_white;
+.header-nav--no-js .header-nav__button-menu {
+  @media (max-width: $bp_mobile-max) {
+    display: none;
   }
 }
 
-.header-nav__item {
-  @media (min-width: $bp_tablet) {
-    border: none;
-  }
-  text-align: center;
-  border-top: 1px solid $special_border;
+.header-nav--no-js .header-nav__list {
+  position: static;
 }
 
-.header-nav__link {
-  @media (min-width: $bp_tablet) {
-    font-size: 18px;
-    line-height: 24px;
-    padding-top: 14px;
-    padding-bottom: 10px;
-    padding-left: 3px;
-    padding-right: 3px;
-  }
-
-  @media (min-width: $bp_tablet) {
-    position: relative;
-    z-index: 10; /* Иначе изображение с котом перекрывает собой меню. */
-  }
-
-  display: block;
-  padding-top: 24px;
-  padding-bottom: 21px;
-  padding-left: 22px; /* Боковые поля не могут быть меньше вертикальных */
-  padding-right: 22px;
-  font-family: "Oswald", "Arial", sans-serif;
-  font-size: 20px;
-  line-height: 20px;
-  text-transform: uppercase;
-  transition: opacity $anim-slow;
-
-  &:hover {
-    opacity: 0.6;
-  }
-
-  &:active {
-    opacity: 0.3;
+.header-nav--closed .header-nav__list {
+  @media (max-width: $bp_mobile-max) {
+    display: none;
   }
 }
 
+.header-nav--opened .header-nav__button-menu {
+  background-image: url("../../images/icons/stack.svg#header-closemenu");
+  background-size: 20px 20px;
+  right: 14px;
+}
 
-
-
-
-
-/* @media (min-width: $bp_tablet) {
-  .header-nav__link--current {
-    position: relative;
-
-    &::after {
-      content: "";
-      width: 100%;
-      height: 2px;
-      background-color: $basic_green;
-      position: absolute;
-      left: 0;
-      bottom: 0;
-    }
+.header-nav--opened .header-nav__list {
+  @media (max-width: $bp_mobile-max) {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
   }
-} */
-
+}

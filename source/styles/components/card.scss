@@ -1,5 +1,5 @@
 .card {
-      // outline: 1px solid green;
+  display: block;
   border-bottom: 1px solid $special_grey-2;
   min-width: 280px;
   min-height: 209px;
@@ -52,7 +52,6 @@
   align-items: center;
   width: 50%;
   height: 107px;
-      // outline: 1px solid orange;
 
   @media (min-width: $bp_tablet) {
     width: 200px;
@@ -73,7 +72,6 @@
 }
 
 .card__info { /* Обертка для всей текстовой информации в карточке. */
-      // outline: 1px solid blue;
   width: 50%;
 
   @media (min-width: $bp_tablet) {
@@ -87,11 +85,12 @@
   padding-top: 1px;
   padding-right: 40%;
   margin-bottom: 14px;
-      // background-color: skyblue;
-  font-family: "Oswald", sans-serif;
+  font-family: "Oswald", "Arial", sans-serif;
   font-size: 16px;
   line-height: 20px;
   text-transform: uppercase;
+  overflow: hidden;
+  overflow-wrap: break-word;
 
   @media (min-width: $bp_tablet) {
     font-size: 20px;
@@ -112,7 +111,6 @@
 }
 
 .card__parameters { /* Таблица параметров (свойств) товара. */
-      // outline: 1px solid red;
   display: flex;
   flex-wrap: wrap;
   margin-top: 0;
@@ -128,8 +126,9 @@
 
 .card__parameter-name,
 .card__parameter-value { /* Название параметра. */
-      // background-color: rgba(255, 0, 0, 0.2);
   width: 50%;
+  overflow: hidden;
+  overflow-wrap: break-word;
 
   @media (min-width: $bp_tablet) {
     border-bottom: 1px solid $special_grey;
@@ -144,7 +143,6 @@
 }
 
 .card__parameter-value { /* Значение параметра. */
-      // background-color: rgba(0, 0, 255, 0.2);
   margin-left: 0;
   text-align: right;
   padding-left: 10px; /* Чтобы избежать возможного склеивания текста параметра с текстом значения. */

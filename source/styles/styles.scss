@@ -8,12 +8,15 @@
 @import "./components/button-primary.scss";
 @import "./components/button-secondary.scss";
 @import "./components/section-title.scss";
-@import "./blocks/title-withline.scss";
-@import "./blocks/input.scss";
-@import "./blocks/control-radio.scss";
-@import "./blocks/control-checkbox.scss";
-@import "./blocks/card.scss";
+@import "./components/title-withline.scss";
+@import "./components/input.scss";
+@import "./components/control-radio.scss";
+@import "./components/control-checkbox.scss";
+@import "./components/card.scss";
 @import "./components/card-showmore.scss";
+@import "./components/factoids.scss";
+@import "./components/title-inner.scss";
+@import "./components/main.scss";
 
 /* BLOCKS */
 @import "./blocks/header.scss";
@@ -22,17 +25,15 @@
 @import "./blocks/programs.scss";
 @import "./blocks/features.scss";
 @import "./blocks/example.scss";
-@import "./blocks/factoids.scss";
 @import "./blocks/slider.scss";
 @import "./blocks/footer.scss";
 @import "./blocks/footer-coordinates.scss";
 @import "./blocks/cooperate.scss";
 @import "./blocks/footer-links.scss";
 @import "./blocks/footer-socials.scss";
+@import "./blocks/footer-social.scss";
 @import "./blocks/footer-academy.scss";
 @import "./blocks/form-container.scss";
-@import "./blocks/title-inner.scss";
-@import "./blocks/title-inner-annotation.scss";
 @import "./blocks/catalog-container.scss";
 @import "./blocks/additives.scss";
 @import "./blocks/additives-list.scss";

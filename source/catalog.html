@@ -23,12 +23,11 @@
         <img src="images/logo-mobile.svg" width="33" height="38" alt="Логотип магазина Cat Energy.">
       </picture>
     </a>
-    <nav class="header-nav">
-      <button class="header-nav__button-burger" type="button">
-<!--         <img src="images/header-burgermenu.svg" width="24" height="24" alt="кнопка навигации">
- -->        <span class="visually-hidden">Открыть меню.</span>
+    <nav class="header-nav header-nav--no-js">
+      <button class="header-nav__button-menu" type="button">
+        <span class="visually-hidden">Vеню.</span>
       </button>
-      <ul class="header-nav__list"> <!-- добавить класс header-nav__list--no-js -->
+      <ul class="header-nav__list">
         <li class="header-nav__item">
           <a class="header-nav__link" href="index.html" aria-current="page">Главная</a>
         </li>
@@ -42,19 +41,19 @@
     </nav>
   </header>
 
-  <main>
+  <main class="main">
     <h1 class="title-inner title-inner--catalog">Каталог продукции</h1>
     <section class="catalog-container catalog-container--goods">
       <h2 class="visually-hidden">Карточки товаров</h2>
       <ul class="catalog-container__cards">
 
-        <li class="card"> <!-- Курица 500 -->
+        <li class="card"><!-- Курица 500 -->
           <div class="card__wrapper">
             <a class="card__image-container" href="goods/sku-1001.html">
               <picture>
-                <source width="161" heigh="172" type="image/png" media="(min-width: 1440px)" srcset="images/goods__chicken-small--desktop@1x.png 1x, images/goods__chicken-small--desktop@2x.png 2x">
-                <source width="162" heigh="173" type="image/png" media="(min-width: 768px)" srcset="images/goods__chicken-small--desktop@1x.png 1x, images/goods__chicken-small--tablet@2x.png 2x">
-                <img class="card__image" srcset="images/goods__chicken-small--mobile@1x.png 1x, images/goods__chicken-small--mobile@2x.png 2x" width="68" height="87" alt="Cat Energy Курица, 500 грамм">
+                <source width="161" height="172" type="image/png" media="(min-width: 1440px)" srcset="images/goods__chicken-small--desktop@1x.png 1x, images/goods__chicken-small--desktop@2x.png 2x">
+                <source width="162" height="173" type="image/png" media="(min-width: 768px)" srcset="images/goods__chicken-small--desktop@1x.png 1x, images/goods__chicken-small--tablet@2x.png 2x">
+                <img class="card__image" src="images/goods__chicken-small--mobile@1x.png" srcset="images/goods__chicken-small--mobile@2x.png 2x" width="68" height="87" alt="Cat Energy Курица, 500 грамм">
               </picture>
             </a>
             <div class="card__info">
@@ -71,20 +70,20 @@
               </dl>
             </div>
           </div>
-          <button class="button-primary">Заказать</button>
+          <a class="button-primary" href="order.html?sku=1001">Заказать</a>
         </li>
 
-        <li class="card"> <!-- Курица 1000 -->
+        <li class="card"><!-- Курица 1000 -->
           <div class="card__wrapper">
             <a class="card__image-container" href="goods/sku-1002.html">
               <picture>
-                <source width="169" heigh="196" type="image/png" media="(min-width: 1440px)" srcset="images/goods__chicken-big--desktop@1x.png 1x, images/goods__chicken-big--desktop@2x.png 2x">
-                <source width="174" heigh="206" type="image/png" media="(min-width: 768px)" srcset="images/goods__chicken-big--desktop@1x.png 1x, images/goods__chicken-big--tablet@2x.png 2x">
-                <img class="card__image" srcset="images/goods__chicken-big--mobile@1x.png 1x, images/goods__chicken-bog--mobile@2x.png 2x" width="84" height="101" alt="Cat Energy Курица, 1000 грамм">
+                <source width="169" height="196" type="image/png" media="(min-width: 1440px)" srcset="images/goods__chicken-big--desktop@1x.png 1x, images/goods__chicken-big--desktop@2x.png 2x">
+                <source width="174" height="206" type="image/png" media="(min-width: 768px)" srcset="images/goods__chicken-big--desktop@1x.png 1x, images/goods__chicken-big--tablet@2x.png 2x">
+                <img class="card__image" src="images/goods__chicken-big--mobile@1x.png" srcset="images/goods__chicken-bog--mobile@2x.png 2x" width="84" height="101" alt="Cat Energy Курица, 1000 грамм">
               </picture>
             </a>
             <div class="card__info">
-              <a class="card__name" href="goods/sku-1001.html">Cat Energy
+              <a class="card__name" href="goods/sku-1002.html">Cat Energy
                 PRO 1000&nbsp;г</a>
 
               <dl class="card__parameters">
@@ -97,20 +96,20 @@
               </dl>
             </div>
           </div>
-          <button class="button-primary">Заказать</button>
+          <a class="button-primary" href="order.html?sku=1002">Заказать</a>
         </li>
 
-        <li class="card"> <!-- Рыба 500 -->
+        <li class="card"><!-- Рыба 500 -->
           <div class="card__wrapper">
             <a class="card__image-container" href="goods/sku-1003.html">
               <picture>
-                <source width="163" heigh="174" type="image/png" media="(min-width: 1440px)" srcset="images/goods__fish-small--desktop@1x.png 1x, images/goods__fish-small--desktop@2x.png 2x">
-                <source width="164" heigh="175" type="image/png" media="(min-width: 768px)" srcset="images/goods__fish-small--desktop@1x.png 1x, images/goods__fish-small--tablet@2x.png 2x">
-                <img class="card__image" srcset="images/goods__fish-small--mobile@1x.png 1x, images/goods__fish-small--mobile@2x.png 2x" width="68" height="79" alt="Cat Energy Рыба, 500 грамм">
+                <source width="163" height="174" type="image/png" media="(min-width: 1440px)" srcset="images/goods__fish-small--desktop@1x.png 1x, images/goods__fish-small--desktop@2x.png 2x">
+                <source width="164" height="175" type="image/png" media="(min-width: 768px)" srcset="images/goods__fish-small--desktop@1x.png 1x, images/goods__fish-small--tablet@2x.png 2x">
+                <img class="card__image" src="images/goods__fish-small--mobile@1x.png" srcset="images/goods__fish-small--mobile@2x.png 2x" width="68" height="79" alt="Cat Energy Рыба, 500 грамм">
               </picture>
             </a>
             <div class="card__info">
-              <a class="card__name" href="goods/sku-1001.html">Cat Energy
+              <a class="card__name" href="goods/sku-1003.html">Cat Energy
                 PRO 500&nbsp;г</a>
 
               <dl class="card__parameters">
@@ -123,20 +122,20 @@
               </dl>
             </div>
           </div>
-          <button class="button-primary">Заказать</button>
+          <a class="button-primary" href="order.html?sku=1003">Заказать</a>
         </li>
 
-        <li class="card"> <!-- Рыба 1000 -->
+        <li class="card"><!-- Рыба 1000 -->
           <div class="card__wrapper">
             <a class="card__image-container" href="goods/sku-1004.html">
               <picture>
-                <source width="169" heigh="196" type="image/png" media="(min-width: 1440px)" srcset="images/goods__fish-big--desktop@1x.png 1x, images/goods__fish-big--desktop@2x.png 2x">
-                <source width="168" heigh="200" type="image/png" media="(min-width: 768px)" srcset="images/goods__fish-big--desktop@1x.png 1x, images/goods__fish-big--tablet@2x.png 2x">
-                <img class="card__image" srcset="images/goods__fish-big--mobile@1x.png 1x, images/goods__fish-bog--mobile@2x.png 2x" width="84" height="101" alt="Cat Energy Рыба, 1000 грамм">
+                <source width="169" height="196" type="image/png" media="(min-width: 1440px)" srcset="images/goods__fish-big--desktop@1x.png 1x, images/goods__fish-big--desktop@2x.png 2x">
+                <source width="168" height="200" type="image/png" media="(min-width: 768px)" srcset="images/goods__fish-big--desktop@1x.png 1x, images/goods__fish-big--tablet@2x.png 2x">
+                <img class="card__image" src="images/goods__fish-big--mobile@1x.png" srcset="images/goods__fish-bog--mobile@2x.png 2x" width="84" height="101" alt="Cat Energy Рыба, 1000 грамм">
               </picture>
             </a>
             <div class="card__info">
-              <a class="card__name" href="goods/sku-1001.html">Cat Energy
+              <a class="card__name" href="goods/sku-1004.html">Cat Energy
                 PRO 1000&nbsp;г</a>
 
               <dl class="card__parameters">
@@ -149,20 +148,20 @@
               </dl>
             </div>
           </div>
-          <button class="button-primary">Заказать</button>
+          <a class="button-primary" href="order.html?sku=1004">Заказать</a>
         </li>
 
-        <li class="card"> <!-- Гречка 500 -->
+        <li class="card"><!-- Гречка 500 -->
           <div class="card__wrapper">
             <a class="card__image-container" href="goods/sku-1005.html">
               <picture>
-                <source width="161" heigh="172" type="image/png" media="(min-width: 1440px)" srcset="images/goods__buckwheat-small--desktop@1x.png 1x, images/goods__buckwheat-small--desktop@2x.png 2x">
-                <source width="162" heigh="172" type="image/png" media="(min-width: 768px)" srcset="images/goods__buckwheat-small--desktop@1x.png 1x, images/goods__buckwheat-small--tablet@2x.png 2x">
-                <img class="card__image" srcset="images/goods__buckwheat-small--mobile@1x.png 1x, images/goods__buckwheat-small--mobile@2x.png 2x" width="68" height="79" alt="Cat Energy Гречка, 500 грамм">
+                <source width="161" height="172" type="image/png" media="(min-width: 1440px)" srcset="images/goods__buckwheat-small--desktop@1x.png 1x, images/goods__buckwheat-small--desktop@2x.png 2x">
+                <source width="162" height="172" type="image/png" media="(min-width: 768px)" srcset="images/goods__buckwheat-small--desktop@1x.png 1x, images/goods__buckwheat-small--tablet@2x.png 2x">
+                <img class="card__image" src="images/goods__buckwheat-small--mobile@1x.png" srcset="images/goods__buckwheat-small--mobile@2x.png 2x" width="68" height="79" alt="Cat Energy Гречка, 500 грамм">
               </picture>
             </a>
             <div class="card__info">
-              <a class="card__name" href="goods/sku-1001.html">Cat Energy
+              <a class="card__name" href="goods/sku-1005.html">Cat Energy
                 SLIM 500&nbsp;г</a>
 
               <dl class="card__parameters">
@@ -175,20 +174,20 @@
               </dl>
             </div>
           </div>
-          <button class="button-primary">Заказать</button>
+          <a class="button-primary" href="order.html?sku=1005">Заказать</a>
         </li>
 
-        <li class="card"> <!-- Гречка 1000 -->
+        <li class="card"><!-- Гречка 1000 -->
           <div class="card__wrapper">
             <a class="card__image-container" href="goods/sku-1006.html">
               <picture>
-                <source width="169" heigh="196" type="image/png" media="(min-width: 1440px)" srcset="images/goods__buckwheat-big--desktop@1x.png 1x, images/goods__buckwheat-big--desktop@2x.png 2x">
-                <source width="168" heigh="200" type="image/png" media="(min-width: 768px)" srcset="images/goods__buckwheat-big--desktop@1x.png 1x, images/goods__buckwheat-big--tablet@2x.png 2x">
-                <img class="card__image" srcset="images/goods__buckwheat-big--mobile@1x.png 1x, images/goods__buckwheat-bog--mobile@2x.png 2x" width="84" height="101" alt="Cat Energy Гречка, 1000 грамм">
+                <source width="169" height="196" type="image/png" media="(min-width: 1440px)" srcset="images/goods__buckwheat-big--desktop@1x.png 1x, images/goods__buckwheat-big--desktop@2x.png 2x">
+                <source width="168" height="200" type="image/png" media="(min-width: 768px)" srcset="images/goods__buckwheat-big--desktop@1x.png 1x, images/goods__buckwheat-big--tablet@2x.png 2x">
+                <img class="card__image" src="images/goods__buckwheat-big--mobile@1x.png" srcset="images/goods__buckwheat-bog--mobile@2x.png 2x" width="84" height="101" alt="Cat Energy Гречка, 1000 грамм">
               </picture>
             </a>
             <div class="card__info">
-              <a class="card__name" href="goods/sku-1001.html">Cat Energy
+              <a class="card__name" href="goods/sku-1006.html">Cat Energy
                 SLIM 1000&nbsp;г</a>
 
               <dl class="card__parameters">
@@ -201,20 +200,20 @@
               </dl>
             </div>
           </div>
-          <button class="button-primary">Заказать</button>
+          <a class="button-primary" href="order.html?sku=1006">Заказать</a>
         </li>
 
-        <li class="card"> <!-- Рис 500 -->
+        <li class="card"><!-- Рис 500 -->
           <div class="card__wrapper">
             <a class="card__image-container" href="goods/sku-1007.html">
               <picture>
-                <source width="163" heigh="174" type="image/png" media="(min-width: 1440px)" srcset="images/goods__rice-small--desktop@1x.png 1x, images/goods__rice-small--desktop@2x.png 2x">
-                <source width="164" heigh="175" type="image/png" media="(min-width: 768px)" srcset="images/goods__rice-small--desktop@1x.png 1x, images/goods__rice-small--tablet@2x.png 2x">
-                <img class="card__image" srcset="images/goods__rice-small--mobile@1x.png 1x, images/goods__rice-small--mobile@2x.png 2x" width="72" height="85" alt="Cat Energy Рис, 500 грамм">
+                <source width="163" height="174" type="image/png" media="(min-width: 1440px)" srcset="images/goods__rice-small--desktop@1x.png 1x, images/goods__rice-small--desktop@2x.png 2x">
+                <source width="164" height="175" type="image/png" media="(min-width: 768px)" srcset="images/goods__rice-small--desktop@1x.png 1x, images/goods__rice-small--tablet@2x.png 2x">
+                <img class="card__image" src="images/goods__rice-small--mobile@1x.png" srcset="images/goods__rice-small--mobile@2x.png 2x" width="72" height="85" alt="Cat Energy Рис, 500 грамм">
               </picture>
             </a>
             <div class="card__info">
-              <a class="card__name" href="goods/sku-1001.html">Cat Energy
+              <a class="card__name" href="goods/sku-1007.html">Cat Energy
                 SLIM 500&nbsp;г</a>
 
               <dl class="card__parameters">
@@ -227,13 +226,13 @@
               </dl>
             </div>
           </div>
-          <button class="button-primary">Заказать</button>
+          <a class="button-primary" href="order.html?sku=1007">Заказать</a>
         </li>
 
         <li class="card-showmore">
           <span class="card-showmore__title">Показать еще 100500 товаров</span>
           <span class="card-showmore__description">На самом деле вкусов гораздо больше!</span>
-          <button class="button-secondary">показать все</button>
+          <a class="button-secondary" href="new-goods.html">показать все</a>
         </li>
       </ul>
     </section>
@@ -249,15 +248,15 @@
               <span class="additives-list__packing">1&nbsp;упаковка (100&nbsp;г)</span>
               <span class="additives-list__price">200&nbsp;₽</span>
             </div>
-            <button class="button-primary button-primary--catalog-desktop">Заказать</button>
+            <a class="button-primary button-primary--catalog-desktop" href="order.html?sku=2001">Заказать</a>
           </li>
           <li class="additives-list__item">
             <div class="additives-list__line">
               <span class="additives-list__name">Питьевая вода</span>
               <span class="additives-list__packing">5&nbsp;литров</span>
-              <span class="additives-list__price">50&nbsp;₽</span>
+              <span class="additives-list__price additives-list__price--two-digits">50&nbsp;₽</span>
             </div>
-            <button class="button-primary button-primary--catalog-desktop">Заказать</button>
+            <a class="button-primary button-primary--catalog-desktop" href="order.html?sku=2002">Заказать</a>
           </li>
           <li class="additives-list__item">
             <div class="additives-list__line">
@@ -265,7 +264,7 @@
               <span class="additives-list__packing">1&nbsp;литр</span>
               <span class="additives-list__price">100&nbsp;₽</span>
             </div>
-            <button class="button-primary button-primary--catalog-desktop">Заказать</button>
+            <a class="button-primary button-primary--catalog-desktop" href="order.html?sku=2003">Заказать</a>
           </li>
           <li class="additives-list__item">
             <div class="additives-list__line">
@@ -273,7 +272,7 @@
               <span class="additives-list__packing">1&nbsp;упаковка (30&nbsp;г)</span>
               <span class="additives-list__price">300&nbsp;₽</span>
             </div>
-            <button class="button-primary button-primary--catalog-desktop">Заказать</button>
+            <a class="button-primary button-primary--catalog-desktop" href="order.html?sku=2004">Заказать</a>
           </li>
 
         </ul>
@@ -310,7 +309,6 @@
     <section class="footer-links">
       <h2 class="visually-hidden">Наши ссылки:</h2>
       <a class="footer-links__logo-link" href="index.html">
-        <!-- <img class="footer-links__logo-image" src="images/logo-text.svg" width="128" height="24" alt="Cat Energy"> -->
         <span class="visually-hidden">Логотип Cat Energy</span>
       </a>
       <ul class="footer-socials">
@@ -330,7 +328,7 @@
           </a>
         </li>
       </ul>
-      <a class="footer-academy" href="https://htmlacademy.ru/">
+      <a class="footer-academy" href="https://htmlacademy.ru/intensive/adaptive">
         <p class="footer-academy__name">HTML Academy</p>
         <svg class="footer-academy__logo" width="27" height="34" viewBox="0 0 27 34" fill="none"
           xmlns="http://www.w3.org/2000/svg">

@@ -14,3 +14,9 @@
   line-height: 18px;
 }
 /* Используется в .programs__text, .features__item, .example__text */
+
+@mixin normalize-ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}

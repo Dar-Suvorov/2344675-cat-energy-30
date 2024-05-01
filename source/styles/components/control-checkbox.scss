@@ -1,6 +1,7 @@
 .control-checkbox {
+  display: block;
   position: relative;
-  font-family: "Oswald", sans-serif;
+  font-family: "Oswald", "Arial", sans-serif;
   font-size: 16px;
   line-height: 18px;
   color: $special_dark-grey;
@@ -10,7 +11,6 @@
   padding-top: 7px;
   padding-left: 45px;
   transition: color $anim-slow, border-color $anim-slow;
-
 
   @media (min-width: $bp_tablet) {
     font-size: 20px;
@@ -33,10 +33,7 @@
 }
 
 .control-checkbox__label {
-  /* Для точного центрирования галочки ::after. */
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
+  overflow-wrap: break-word;
 
   &::before {
     content: "";
@@ -80,18 +77,14 @@
   opacity: 1;
 }
 
-
-
-.control-checkbox--additive { /* Уточнение для списка дополнительных товаров на странице подбора программы. */
+.control-checkbox--additive {
   @media (min-width: $bp_tablet) {
     width: 285px; /* По ширине кнопки под списком дополнительных товаров. */
-        outline: 1px solid red;
     padding-left: 60px;
     padding-top: 12px;
   }
 
   @media (min-width: $bp_desktop) {
-    width: 200px; /* Примерно. */
-        outline: 1px solid red;
+    width: 245px;
   }
 }

@@ -38,11 +38,10 @@
 }
 
 .catalog-container__cards {
-      // outline: 1px dashed red;
+  @include normalize-ul;
   border-top: 1px solid $special_grey-2;
   display: flex;
   flex-direction: column;
-  // gap: 22px;
 
   @media (min-width: $bp_tablet) {
     border-top: 0;

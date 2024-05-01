@@ -1,7 +1,6 @@
-/* Элементы ввода текста (строка, число, email, телефон, текст). */
 .input {
   position: relative;
-  font-family: "Oswald", sans-serif;
+  font-family: "Oswald", "Arial", sans-serif;
   font-size: 16px;
   line-height: 18px;
   color: $special_dark-grey;
@@ -22,33 +21,20 @@
   }
 }
 
+.input label { /* label любого input */
+  width: max-content;
+  max-width: 50%;
+  overflow-wrap: break-word;
+}
+
 /* Собственно input, однострочное поле ввода строки. */
 .input--input {
   width: 100%;
 }
 
-.input--input label {
-  width: max-content;
-}
-
 /* Поле ввода у любых элементов input. */
 .input__input:focus-visible {
   outline: 2px solid $special_dark-grey;
-}
-
-.input--email,
-.input--phone {
-  // position: relative;
-  @media (min-width: $bp_desktop) {
-    width: 569px;
-  }
-}
-
-.input--input input {
-  overflow: hidden;
-  appearance: none;
-  --moz-appearance: none;
-  --webkit-appearance: none;
 }
 
 .input--input input,
@@ -60,14 +46,15 @@
   color: inherit;
   text-transform: uppercase;
   padding: 14px 15px 12px;
+  width: calc(100% - 20px - 20px);
   flex-grow: 1;
   position: relative;
 
   @media (min-width: $bp_tablet) {
-    padding: 14px 20px 12px;
+    padding: 11px 20px 11px;
   }
 
-  &:invalid:not(:placeholder-shown) { /* Обработка некорректного ввода. */
+  &:invalid:not(:placeholder-shown) {
     outline: 2px solid #ff8282;
   }
 }
@@ -81,15 +68,33 @@
   }
 }
 
+.input--email,
+.input--phone {
+  @media (min-width: $bp_desktop) {
+    width: 569px;
+  }
+}
+
+.input--email label,
+.input--phone label {
+  @media (min-width: $bp_tablet) {
+    padding-top: 4px;
+  }
+}
+
+.input--email input,
+.input--phone input {
+  @media (min-width: $bp_tablet) {
+    padding-top: 13px;
+    padding-bottom: 10px;
+  }
+}
+
 /* Поле ввода с иконкой. */
 .input--icon {
   &::after {
     content: "";
     position: absolute;
-    // top: 0;
-    // right: 0;
-    // width: 44px;
-    // height: 100%;
     background-color: $basic_black;
     right: 0;
     transform: translateX(calc(-22px + 50%));
@@ -145,4 +150,16 @@
   &:focus-visible {
     outline: 2px solid $special_dark-grey;
   }
+}
+
+.input--input input {
+  overflow: hidden;
+  appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  margin: 0;
+  width: 0;
+  height: 0;
 }

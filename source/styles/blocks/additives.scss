@@ -29,6 +29,8 @@
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
+  overflow: hidden;
+  overflow-wrap: break-word;
 
   @media (max-width: 767px) and (min-resolution: 2dppx) {
     background-image: url("../../images/cat-bag-mobile@2x.jpg");
@@ -37,7 +39,7 @@
   @media (min-width: $bp_tablet) {
     min-height: 200px;
     text-align: left;
-    padding: 71px 125px 69px 421px; /* Padding слева фиксирован, при расширении страницы будет увеличиваться блок текста. */
+    padding: 71px 125px 69px 421px;
     background-image: url("../../images/cat-bag-tablet@1x.jpg");
   }
 
@@ -57,7 +59,7 @@
     background-image: url("../../images/cat-bag-desktop@2x.jpg");
   }
 
-  &::before { /* Иконка подарка */
+  &::before {
     content: "";
     display: block;
     width: 80px;

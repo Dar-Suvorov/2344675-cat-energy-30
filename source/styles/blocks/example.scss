@@ -1,4 +1,8 @@
 .example {
+  background-color: $special_grey-4;
+  padding: 25px 20px 39px;
+  position: relative;
+
   @media (min-width: $bp_tablet) {
     padding: 16px 30px 100px;
     background-color: $basic_white;
@@ -11,10 +15,6 @@
     margin-right: auto;
     padding: 0;
   }
-
-  background-color: $special_grey-4;
-  padding: 25px 20px 39px;
-  position: relative;
 
   &::before { /* Серая подложка под слайдером / блоком "Живой пример" */
     @media (min-width: $bp_tablet) {
@@ -38,6 +38,12 @@
 }
 
 .example__text {
+  @include common-text;
+  position: relative;
+  z-index: 5; /* Предотвращает перекрытие псевдоэлементом блока feature. */
+  margin-top: 0; /* Переопределяет браузерный 1em. */
+  margin-bottom: 18px;
+
   @media (min-width: $bp_tablet) {
     font-size: 16px;
     line-height: 24px;
@@ -48,17 +54,13 @@
     width: 433px; /* При именно такой ширине переносы строк соответствуют макету. При расхождении в переносах строк из-за различного рендера шрифтов в разных браузерах возможное решение: увеличить ширину блока; между неразрывными словами проставить span с br внутри и классом, который скрывает его на мобильной и планшетной версии. */
     margin-bottom: 70px;
     overflow: hidden;
-    text-overflow: ellipsis;
+    overflow-wrap: break-word;
   }
-
-  @include common-text;
-  position: relative;
-  z-index: 5; /* Предотвращает перекрытие псевдоэлементом блока feature. */
-  margin-top: 0; /* Переопределяет браузерный 1em. */
-  margin-bottom: 18px;
 }
 
 .example__digits { /* Контейнер для фактоидов (компоненты) и суммы затрат. */
+  background-color: inherit; /* Наследуем цвет от секции, для передачи его в factoids__parameter. */
+
   @media (min-width: $bp_tablet) {
     display: flex;
     margin-bottom: 68px;
@@ -68,11 +70,14 @@
     flex-direction: column;
     margin-bottom: 63px;
   }
-
-  background-color: inherit; /* Наследуем цвет от секции, для передачи его в factoids__parameter. */
 }
 
 .example__totals {
+  margin: 0 auto 20px;
+  display: flex;
+  justify-content: center;
+  z-index: 5; /* Предотвращает перекрытие псевдоэлементом блока feature. */
+
   @media (min-width: $bp_tablet) {
     flex-direction: column;
     margin-right: 0;
@@ -91,14 +96,19 @@
     min-width: 360px;
     justify-content: flex-start;
   }
-
-  margin: 0 auto 20px;
-  display: flex;
-  justify-content: center;
-  z-index: 5; /* Предотвращает перекрытие псевдоэлементом блока feature. */
 }
 
 .example__totals-line {
+  font-family: "Oswald", "Arial", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  min-width: 65px;
+
   @media (min-width: $bp_tablet) {
     font-size: 20px;
     line-height: 20px;
@@ -110,16 +120,6 @@
     margin-left: 0;
     text-align: left;
   }
-
-  font-family: "Oswald", sans-serif;
-  font-size: 14px;
-  line-height: 20px;
-  text-transform: uppercase;
-  margin-top: 0;
-  margin-bottom: 0;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  min-width: 65px;
 }
 
 .example__totals-line:first-child {
@@ -132,6 +132,7 @@
 .example__totals-line--digit { /* По макету в десктопной версии у цифры "15 тыс" выключка по центру, по оси второго фактоида. */
   @media (min-width: $bp_desktop) {
     width: 162px; /* Ширина фактоида. */
+    min-width: 162px;
     margin-left: auto;
     text-align: center;
   }

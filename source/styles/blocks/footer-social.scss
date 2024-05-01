@@ -1,0 +1,35 @@
+.footer-social {
+  display: block;
+}
+
+.footer-social__link {
+  display: block;
+  width: 28px;
+  height: 22px;
+  transition: background-color $anim-slow, opacity $anim-fast;
+
+  &:hover,
+  &:focus-visible {
+    background-color: $basic_green;
+  }
+
+  &:active {
+    background-color: $basic_green;
+    opacity: 0.5;
+  }
+}
+
+.footer-social__link--vk {
+  background-color: $special_grey-3;
+  mask: url("../../images/icons/stack.svg#social-vk");
+}
+
+.footer-social__link--youtube {
+  background-color: $special_grey-3;
+  mask: url("../../images/icons/stack.svg#social-youtube");
+}
+
+.footer-social__link--tg {
+  background-color: $special_grey-3;
+  mask: url("../../images/icons/stack.svg#social-tg");
+}

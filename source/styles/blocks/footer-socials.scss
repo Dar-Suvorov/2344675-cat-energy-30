@@ -1,4 +1,5 @@
 .footer-socials {
+  @include normalize-ul;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -6,7 +7,6 @@
   width: calc(100% - 20px - 20px); /* 320px (мин. ширина экрана) - 2*20px (поля полосы). */
   margin-left: auto;
   margin-right: auto;
-  padding: 0;
   border-top: 1px solid $special_border-2;
   border-bottom: 1px solid $special_border-2;
   padding-top: 20px;
@@ -18,36 +18,4 @@
     margin-left: 55px;
     border: none;
   }
-}
-
-.footer-social__link {
-  display: block;
-  width: 28px;
-  height: 22px;
-  transition: background-color $anim-slow, opacity $anim-fast;
-
-  &:hover,
-  &:focus-visible {
-    background-color: $basic_green;
-  }
-
-  &:active {
-    background-color: $basic_green;
-    opacity: 0.5;
-  }
-}
-
-.footer-social__link--vk {
-  background-color: $special_grey-3;
-  mask: url("../../images/icons/stack.svg#social-vk");
-}
-
-.footer-social__link--youtube {
-  background-color: $special_grey-3;
-  mask: url("../../images/icons/stack.svg#social-youtube");
-}
-
-.footer-social__link--tg {
-  background-color: $special_grey-3;
-  mask: url("../../images/icons/stack.svg#social-tg");
 }

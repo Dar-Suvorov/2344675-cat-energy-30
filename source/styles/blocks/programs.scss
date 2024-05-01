@@ -1,16 +1,23 @@
 .programs {
+  margin: 0 20px 21px;
+  font-weight: 400;
+
   @media (min-width: $bp_tablet) {
-    margin: 0 30px 46px;
+    margin: 0 30px 40px;
   }
 
   @media (min-width: $bp_desktop) {
-    margin: 0 auto 73px;
+    margin: 0 auto 65px;
     width: $desktop_width;
   }
-  margin: 0 20px 22px;
 }
 
 .programs__wrapper {
+  @include normalize-ul;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
   @media (min-width: $bp_tablet) {
     gap: 30px;
   }
@@ -21,12 +28,16 @@
     justify-content: center;
     gap: 80px;
   }
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
 }
 
 .programs__card {
+  display: block;
+  background-color: $basic_grey;
+  background-repeat: no-repeat;
+  min-height: 266px;
+  padding: 30px 20px 21px;
+  position: relative;
+
   @media (min-width: $bp_tablet) {
     min-height: 372px;
     padding: 77px 320px 60px 52px; /* В планшетной версии padding-right резервирует место для декоративного кота с кругом. */
@@ -37,27 +48,8 @@
     min-height: 374px;
     padding: 77px 52px 59px;
   }
-  background-color: $basic_grey;
-  background-repeat: no-repeat;
-  min-height: 266px;
-  padding: 30px 20px 21px;
-  position: relative;
 
-  &::before { /* Зеленый круг под фоном */
-    @media (min-width: $bp_tablet) {
-      width: 200px;
-      height: 200px;
-      top: 92px;
-      left: calc(100% - 200px - 63px); /* right не работает, т.к. перебивается общим правилом left. 200px - ширина псевдоэлемента, 63px - правое поле родительского элемента. */
-    }
-
-    @media (min-width: $bp_desktop) {
-      width: 100px;
-      height: 100px;
-      top: 47px;
-      left: 52px;
-    }
-
+  &::before {
     content: "";
     display: block;
     position: absolute;
@@ -67,9 +59,23 @@
     height: 50px;
     background-color: $basic_green;
     border-radius: 50%;
+
+    @media (min-width: $bp_tablet) {
+      width: 200px;
+      height: 200px;
+      top: 92px;
+      left: calc(100% - 200px - 63px);
+    }
+
+    @media (min-width: $bp_desktop) {
+      width: 100px;
+      height: 100px;
+      top: 47px;
+      left: 52px;
+    }
   }
 
-  &::after { /* Черный кот слева от названия программы. */
+  &::after {
     content: "";
     display: block;
     position: absolute;
@@ -83,6 +89,9 @@
 
 .programs__card--slim {
   &::after {
+    position: absolute;
+    background-image: url("../../images/icons/stack.svg#program-slim");
+
     @media (min-width: $bp_tablet) {
       width: 140px;
       height: 194px;
@@ -100,12 +109,17 @@
       left: 67px;
       transform: none;
     }
-    position: absolute;
-    background-image: url("../../images/icons/stack.svg#program-slim");
   }
 }
 
 .programs__card--pro::after {
+  background-image: url("../../images/icons/stack.svg#program-pro");
+  /* Подгонка под конкретное изображение программы. */
+  width: 67px;
+  height: 28px;
+  top: 35px;
+  left: 13px;
+
   @media (min-width: $bp_tablet) {
     width: 268px;
     height: 112px;
@@ -121,38 +135,42 @@
     left: 33px;
     transform: none;
   }
-  background-image: url("../../images/icons/stack.svg#program-pro");
-  /* Подгонка под конкретное изображение программы. */
-  width: 67px;
-  height: 28px;
-  top: 35px;
-  left: 13px;
 }
 
 .programs__name {
+  margin-top: 0;
+  margin-bottom: 29px;
+  margin-left: 70px;
+  max-width: calc(100% - 50px);
+  font-family: "Oswald", "Arial", sans-serif;
+  font-size: 24px;
+  line-height: 37px;
+  text-transform: uppercase;
+  overflow: hidden;
+  overflow-wrap: break-word;
+
   @media (min-width: $bp_tablet) {
     font-size: 36px;
     line-height: 36px;
     margin-left: 0;
-    margin-bottom: 22px;
+    margin-bottom: 23px;
   }
 
   @media (min-width: $bp_desktop) {
     margin-left: 162px;
     margin-bottom: 73px;
   }
-  margin-top: 0;
-  margin-bottom: 29px;
-  margin-left: 70px;
-  max-width: calc(100% - 50px);
-  font-family: "Oswald", sans-serif;
-  font-size: 24px;
-  line-height: 37px;
-  text-transform: uppercase;
-  hyphens: auto;
 }
 
 .programs__text {
+  @include common-text;
+  margin-top: 0;
+  border-bottom: 1px solid $special_border-2;
+  padding-bottom: 22px; /* От текста до черты. */
+  margin-bottom: 20px; /* От черты до следующего блока (ссылки со стрелкой). */
+  overflow: hidden;
+  overflow-wrap: break-word;
+
   @media (min-width: $bp_tablet) {
     font-size: 16px;
     line-height: 24px;
@@ -163,15 +181,21 @@
     margin-bottom: 11px;
     border-bottom: none;
   }
-
-  @include common-text;
-  margin-top: 0;
-  border-bottom: 1px solid $special_border-2;
-  padding-bottom: 22px; /* От текста до черты. */
-  margin-bottom: 20px; /* От черты до следующего блока (ссылки со стрелкой). */
 }
 
 .programs__link {
+  display: block;
+  font-family: "Oswald", "Arial", sans-serif;
+  font-size: 16px;
+  line-height: 16px;
+  width: max-content;
+  min-width: 134px;
+  max-width: 100%;
+  text-transform: uppercase;
+  padding-right: 50px; /* Место под стрелку */
+  position: relative;
+  cursor: pointer;
+
   @media (min-width: $bp_tablet) {
     font-size: 20px;
     line-height: 1;
@@ -181,21 +205,21 @@
   @media (min-width: $bp_desktop) {
     max-width: 470px;
   }
-  display: block;
-  font-family: "Oswald", sans-serif;
-  font-size: 16px;
-  line-height: 16px;
-  width: max-content;
-  min-width: 134px;
-  max-width: 100%;
-  text-transform: uppercase;
-  padding-right: 50px; /* Место под стрелку */
-  /* TODO: стрелка */
-  position: relative;
-  cursor: pointer;
 }
 
-.programs__link::after { /* Стрелка возле ссылки */
+.programs__link::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 32px;
+  height: 12px;
+  right: 2px;
+  top: 1px;
+  background-image: url("../../images/icons/stack.svg#arrow-full");
+  background-position: -8px;
+  background-repeat: no-repeat;
+  transition: 0.3s ease-out;
+
   @media (min-width: $bp_tablet) {
     right: -7px;
     top: 2px;
@@ -205,18 +229,6 @@
     right: -7px;
     top: 3px;
   }
-
-  content: "";
-  position: absolute;
-  display: block;
-  width: 32px;
-  height: 12px;
-  right: 9px;
-  top: 1px;
-  background-image: url("../../images/icons/stack.svg#arrow-full");
-  background-position: -8px;
-  background-repeat: no-repeat;
-  transition: 0.3s ease-out;
 }
 
 .programs__link:hover::after {

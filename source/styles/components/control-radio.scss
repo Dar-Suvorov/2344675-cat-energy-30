@@ -1,6 +1,7 @@
 .control-radio {
+  display: block;
   position: relative;
-  font-family: "Oswald", sans-serif;
+  font-family: "Oswald", "Arial", sans-serif;
   font-size: 16px;
   line-height: 18px;
   color: $special_dark-grey;
@@ -10,6 +11,8 @@
   padding-top: 6px;
   padding-left: 45px;
   transition: border-color $anim-slow;
+  overflow-wrap: break-word;
+  max-width: 100%;
 
   @media (min-width: $bp_tablet) {
     font-size: 20px;
@@ -81,4 +84,3 @@
 .control-radio__input:checked + .control-radio__label::after {
   opacity: 1;
 }
-

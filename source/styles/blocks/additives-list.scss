@@ -1,4 +1,5 @@
 .additives-list {
+  @include normalize-ul;
   display: flex;
   flex-direction: column;
   background-color: $special_grey; /* Цвет линий */
@@ -31,6 +32,7 @@
 }
 
 .additives-list__item {
+  display: block;
   background-color: $basic_white;
   padding-top: 13px;
   padding-bottom: 19px;
@@ -53,14 +55,12 @@
 .additives-list__line {
   display: flex;
   flex-wrap: wrap;
-    row-gap: 10px;
-    // column-gap: 10px; /* ПРедотвращение слипания элементов. */
+  row-gap: 10px;
   padding-bottom: 10px;
   justify-content: space-between;
   margin-bottom: 6.5px;
 
   @media (min-width: $bp_tablet) {
-    // align-items: flex-end;
     margin-bottom: 14px;
   }
 
@@ -75,17 +75,16 @@
 }
 
 .additives-list__name {
-      background-color: rgba(255,0,0,0.2);
-  font-family: "Oswald", sans-serif;
+  font-family: "Oswald", "Arial", sans-serif;
   color: $special_dark-grey-2;
   font-size: 16px;
   line-height: 16px;
   text-transform: uppercase;
   display: inline-block;
   width: 100%;
+  overflow-wrap: break-word;
 
   @media (min-width: $bp_tablet) {
-    // flex-grow: 1;
     width: 316px; /* 632px (внутренний размер блока) / 2. */
     padding-right: 1em;
     font-size: 20px;
@@ -95,45 +94,47 @@
   @media (min-width: $bp_desktop) {
     width: 325px;
     padding-right: 5px;
+    transform: translateY(-2px);
   }
 }
 
 .additives-list__packing {
-      background-color: rgba(0,255,0,0.2);
   color: $special_dark-grey;
   font-size: 14px;
   line-height: 14px;
   display: inline-block;
   flex-grow: 1;
   max-width: 50%;
+  overflow-wrap: break-word;
 
   @media (min-width: $bp_tablet) {
-    // flex-grow: 0;
     text-align: right;
     max-width: 224px; /* 632px (100%) - 316px (50%) - 92px. */
-    flex-grow: 0;
     font-size: 16px;
     line-height: 16px;
     flex-grow: 1;
-    align-self: flex-end;
+    margin-top: 3px;
+    margin-bottom: auto;
+    padding-right: 5px;
   }
 
   @media (min-width: $bp_desktop) {
-      width: 200px;
-    padding-right: 5px;
+    width: 200px;
     padding-bottom: 2px;
+    margin-top: 0;
+    margin-bottom: 0;
     text-align: left;
   }
 }
 
 .additives-list__price {
-      background-color: rgba(0,0,255,0.2);
   color: $special_dark-grey;
   font-size: 14px;
   line-height: 14px;
   display: inline-block;
   text-align: right;
   max-width: 50%;
+  overflow-wrap: break-word;
 
   @media (min-width: $bp_tablet) {
     width: 87px;
@@ -148,3 +149,16 @@
   }
 }
 
+/* В макете, по какой-то причине, выключка колонки с ценами в десктопной версии отличается от планшетной и мобильной (по первой цифре и по знаку рубля соответственно). Подгонять ширину всей колонки и выключать ее по левому краю нецелесообразно - при четырехзначной цене нужно изменять ширину всей колонки, а для этого нужно изменять всю разметку блока. Поэтому предполагается точечно двигать блок цены в зависимости от количества цифр с помощью уточнящих классов (скриптом).*/
+
+.additives-list__price--two-digits {
+  @media (min-width: $bp_desktop) {
+    padding-right: 9px;
+  }
+}
+
+.additives-list__price--one-digit {
+  @media (min-width: $bp_desktop) {
+    padding-right: 18px;
+  }
+}

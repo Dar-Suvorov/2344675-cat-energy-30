@@ -1,28 +1,41 @@
 .footer-coordinates {
+  background-color: $basic_grey;
+
   @media (min-width: $bp_desktop) {
     position: relative;
+    padding-top: 95px;
+    padding-bottom: 106px;
   }
-  background-color: $basic_grey;
 }
 
 .footer-coordinates__map {
   position: relative;
+  width: 100%;
+  height: 100%;
 
   @media (min-width: $bp_desktop) {
-    height: 400px;
+    position: absolute;
+    top: 0;
+    min-height: 400px;
   }
 }
 
-.footer-coordinates__map-link {
+.footer-coordinates__map-raster {
   display: block;
-  position: relative;
+  width: 100%;
+  height: 100%;
 
   @media (min-width: $bp_desktop) {
-    left: calc(50% - $bp_tablet / 2);
+    // left: calc(50% - $bp_tablet / 2);
+    position: absolute;
+    overflow: hidden;
   }
 
-  @media (min-width: $bp_desktop) { /* В десктопной версии карта-подложка не тянется, потому что у пользователя может быть очень ширикий экран, в этом случае увеличение высоты блока подложки может сделать футер недоступным, а увеличение только ширины блока подложки может сделать ее плохо считываемой (мало деталей). */
+  @media (min-width: $bp_desktop) {
+    /* Вариант: В десктопной версии карта-подложка не тянется, потому что у пользователя может быть очень ширикий экран, в этом случае увеличение высоты блока подложки может сделать футер недоступным, а увеличение только ширины блока подложки может сделать ее плохо считываемой (мало деталей). При этом iframe тянется до краев экрана.*/
     /* left: calc(50% - $bp_desktop / 2); */
+    position: absolute;
+    top: 0;
     left: 0;
   }
 }
@@ -31,8 +44,9 @@
   width: 100%;
 
   @media (min-width: $bp_desktop) {
-    left: 0;
-    height: 400px;
+    min-height: 400px;
+    height: 100%;
+    object-fit: cover;
   }
 }
 
@@ -45,4 +59,3 @@
   height: 100%;
   border: none;
 }
-// width="600" height="450" style="border:0;"

@@ -1,7 +1,8 @@
 .card-showmore {
-      // outline: 1px solid limegreen;
+  display: block;
   padding: 78px 0 20px;
   position: relative;
+  height: min-content;
 
   @media (min-width: $bp_tablet) {
     width: 324px;
@@ -19,7 +20,7 @@
     min-width: 245px;
     padding-top: 151px;
     min-height: 427px;
-    height: 426px;
+    // height: 426px;
     margin-bottom: 6px;
     padding-bottom: 38px;
   }
@@ -74,13 +75,14 @@
   margin-bottom: 7px;
   padding-left: 1em;
   padding-right: 1em;
-      // background-color: skyblue;
-  font-family: "Oswald", sans-serif;
+  font-family: "Oswald", "Arial", sans-serif;
   font-size: 16px;
   line-height: 20px;
   color: $special_black;
   text-transform: uppercase;
   text-align: center;
+  overflow: hidden;
+  overflow-wrap: break-word;
 
   @media (min-width: $bp_tablet) {
     font-size: 20px;
@@ -105,10 +107,11 @@
   padding-right: 1em;
   font-size: 12px;
   line-height: 16px;
-      // background-color: lightsalmon;
   color: $special_dark-grey;
   text-align: center;
   margin-bottom: 22px;
+  overflow: hidden;
+  overflow-wrap: break-word;
 
   @media (min-width: $bp_tablet) {
     font-size: 16px;

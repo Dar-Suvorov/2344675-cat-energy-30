@@ -23,12 +23,11 @@
         <img src="images/logo-mobile.svg" width="33" height="38" alt="Логотип магазина Cat Energy.">
       </picture>
     </a>
-    <nav class="header-nav">
-      <button class="header-nav__button-burger" type="button">
-<!--         <img src="images/header-burgermenu.svg" width="24" height="24" alt="кнопка навигации">
- -->        <span class="visually-hidden">Открыть меню.</span>
+    <nav class="header-nav header-nav--no-js">
+      <button class="header-nav__button-menu" type="button">
+        <span class="visually-hidden">Vеню.</span>
       </button>
-      <ul class="header-nav__list header-nav__list--index"> <!-- добавить класс header-nav__list--no-js -->
+      <ul class="header-nav__list header-nav__list--index">
         <li class="header-nav__item">
           <a class="header-nav__link header-nav__link--current" href="index.html" aria-current="page">Главная</a>
         </li>
@@ -42,7 +41,7 @@
     </nav>
   </header>
 
-  <main>
+  <main class="main">
     <section class="hero">
       <h1 class="section-title section-title--hero">
         Функциональное <br>
@@ -60,7 +59,7 @@
             Ваш кот весит больше собаки и почти утратил способность лазить по деревьям? Пора на диету! Cat Energy Slim
             поможет вашему питомцу сбросить лишний вес.
           </p>
-          <a class="programs__link" href="catalog.html?program=slim"> <!-- стрелка - средствами CSS. -->
+          <a class="programs__link" href="catalog.html?program=slim">
             Каталог Slim
           </a>
         </li>
@@ -90,10 +89,9 @@
     <section class="example">
       <div class="example__wrapper">
         <h2 class="section-title section-title--example">Живой пример</h2>
-        <p class="example__text">Борис сбросил 5&nbsp;кг за 2&nbsp;месяца, просто заменив свой обычный корм на Cat Energy
-          Slim. Отличный
-          результат без изнуряющих тренировок! При этом он не менял своих привычек и по-прежнему спит по 16&nbsp;часов
-          в&nbsp;день. </p>
+        <p class="example__text">
+          Борис сбросил 5&nbsp;кг за 2&nbsp;месяца, просто заменив свой обычный корм на Cat Energy Slim. Отличный результат без изнуряющих тренировок! При этом он не&nbsp;менял своих привычек и&nbsp;по-прежнему спит по 16&nbsp;часов в&nbsp;день.
+        </p>
           <div class="example__digits">
           <dl class="factoids">
             <div class="factoids__item">
@@ -111,24 +109,11 @@
           </div>
         </div>
       </div>
-      <div class="slider"> <!-- слайдер -->
+      <div class="slider">
         <picture>
-          <source media="(min-width: 768px)" srcset="images/slider-placeholder-tablet@1x.png, images/slider-placeholder-tablet@2x.png 2x" width="560" height="512">
+          <source media="(min-width: 768px)" type="image/png" srcset="images/slider-placeholder-tablet@1x.png, images/slider-placeholder-tablet@2x.png 2x" width="560" height="512">
           <img src="images/slider-placeholder-mobile@1x.png" srcset="images/slider-placeholder-mobile@2x.png 2x" width="280" height="256" alt="Ваш кот до и после: почувствуйте разницу!">
         </picture>
-
-<!--    <picture>
-          <img src="images/slider-placeholder-mobile@1x.png" srcset="images/slider-placeholder-mobile@2x.png 2x" width="280" height="256" alt="Ваш кот до и после: почувствуйте разницу!">
-        </picture>
--->
-
-<!--
-        <picture>
-          <source media="(min-width: 1280px)" srcset="img/why-jacket-desktop@1x.jpg, img/why-jacket-desktop@2x.jpg 2x">
-          <img class="section-whyto__image" src="img/why-jacket-mobile@1x.jpg" srcset="img/why-jacket-mobile@2x.jpg 2x" width="121" height="148" alt="Товары с Resale Ward.">
-      </picture>
- -->
-
       </div>
     </section>
   </main>
@@ -143,7 +128,7 @@
         </address>
       </div>
       <div class="footer-coordinates__map">
-        <a class="footer-coordinates__map-link" href="https://yandex.ru/maps/2/saint-petersburg/house/bolshaya_konyushennaya_ulitsa_19_8/Z0kYdQVjSUYAQFtjfXVyeXpgZQ==/?ll=30.325831%2C59.938631&z=16.56">
+        <a class="footer-coordinates__map-raster" href="https://yandex.ru/maps/2/saint-petersburg/house/bolshaya_konyushennaya_ulitsa_19_8/Z0kYdQVjSUYAQFtjfXVyeXpgZQ==/?ll=30.325831%2C59.938631&z=16.56">
           <picture>
             <source media="(min-width: 1440px)" srcset="images/map-desktop@1x.jpg, images/map-desktop@2x.jpg 2x"
               type="image/png" width="1440" height="400">
@@ -181,7 +166,7 @@
           </a>
         </li>
       </ul>
-      <a class="footer-academy" href="https://htmlacademy.ru/">
+      <a class="footer-academy" href="https://htmlacademy.ru/intensive/adaptive">
         <p class="footer-academy__name">HTML Academy</p>
         <svg class="footer-academy__logo" width="27" height="34" viewBox="0 0 27 34" fill="none"
           xmlns="http://www.w3.org/2000/svg">

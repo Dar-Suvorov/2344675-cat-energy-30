@@ -1,32 +1,24 @@
 .section-title {
-  @media (min-width: $bp_tablet) {
-    font-size: 60px;
-    line-height: 60px;
-  }
-
   font-family: "Oswald", "Arial", sans-serif;
   font-size: 36px;
   line-height: 40px;
-  margin-top: 0; /* В каждой секции margin сверху чуть разный. Проще указывать padding-top в секциях, чем давать заголовкам уточняющие классы и настраивать в них отступ заголовка.*/
-  margin-bottom: 40px;
+  font-weight: 400;
+  margin-top: 0;
+  margin-bottom: 38px;
   margin-left: 0;
   margin-right: auto;
   max-width: 100%;
+  overflow: hidden;
+  overflow-wrap: break-word;
+
+  @media (min-width: $bp_tablet) {
+    font-size: 60px;
+    line-height: 75px;
+    margin-bottom: 32px;
+  }
 }
 
 .section-title--hero {
-  @media (min-width: $bp_tablet) {
-    color: $basic-black;
-    font-size: 60px;
-    line-height: 60px;
-    margin-bottom: 40px;
-    margin-left: 0;
-    margin-right: auto;
-    text-align: left;
-    max-width: 460px;
-    /* Из-за разницы рендеринга шрифтов для Firefox нужно вводить поправку letter-spacing: 1px. В Chrome сразу совпадает с PP. */
-  }
-
   color: $basic-white;
   font-size: 36px;
   line-height: 36px;
@@ -36,15 +28,28 @@
   text-align: center;
   position: relative;
   z-index: 10;
+
+  @media (min-width: $bp_tablet) {
+    color: $basic-black;
+    font-size: 60px;
+    line-height: 60px;
+    margin-bottom: 36px;
+    margin-left: 0;
+    margin-right: auto;
+    text-align: left;
+    max-width: 500px;
+  }
 }
 
 .section-title--example {
+  margin-bottom: 40px;
+
   @media (min-width: $bp_tablet) {
-    margin-bottom: 57px;
+    margin-bottom: 50px;
   }
 
   @media (min-width: $bp_desktop) {
-    margin-top: 1px; /* Коррекция под PP. */
-    margin-bottom: 143px;
+    margin-top: 1px;
+    margin-bottom: 135px;
   }
 }

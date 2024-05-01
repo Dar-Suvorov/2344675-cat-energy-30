@@ -1,62 +1,61 @@
 .factoids {
-  @media (min-width: $bp_tablet) {
-    justify-content: flex-start;
-    column-gap: 42px;
-    row-gap: 0;
-    // width: max-content;
-    max-width: 55%;
-  }
-
-  @media (min-width: $bp_desktop) {
-    width: max-content;
-    max-width: 100%;
-    flex-direction: row;
-  }
-
-  background-color: inherit; /* Наследуем цвет от секции, для передачи его в __parameter. */
+  background-color: $special_grey-4;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 32px;
   margin-top: 0;
   margin-bottom: 5px;
+
+  @media (min-width: $bp_tablet) {
+    justify-content: flex-start;
+    column-gap: 42px;
+    row-gap: 0;
+    max-width: 55%;
+    background-color: $basic_white;
+  }
+
+  @media (min-width: $bp_desktop) {
+    width: max-content;
+    max-width: 100%;
+    flex-direction: row;
+    background-color: $special_grey-4;
+  }
 }
 
 .factoids__item {
-  @media (min-width: $bp_tablet) {
-    width: 162px;
-  }
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: inherit;
   width: 124px;
+
+  @media (min-width: $bp_tablet) {
+    width: 162px;
+  }
 }
 
 .factoids__digit {
-  @media (min-width: $bp_tablet) {
-    font-size: 30px;
-    line-height: 37px;
-    padding-top: 16px;
-    padding-bottom: 18px;
-  }
-  font-family: "Oswald", sans-serif;
+  font-family: "Oswald", "Arial", sans-serif;
   font-size: 24px;
   line-height: 29px; /* По макету 24px, но выносные элементы букв с разных строк наезжают друг на друга. */
   text-align: center;
   border: 1px solid $special_grey;
   width: 100%;
   padding: 13px 15px 12px; /* 13px и 12px - компенсация увеличеного Line-height. */
+  overflow: hidden;
+  overflow-wrap: break-word;
+
+  @media (min-width: $bp_tablet) {
+    font-size: 30px;
+    line-height: 37px;
+    padding-top: 16px;
+    padding-bottom: 18px;
+  }
 }
 
 .factoids__parameter {
-  @media (min-width: $bp_tablet) {
-    font-size: 14px;
-    line-height: 14px;
-    width: max-content;
-    max-width: 150px;
-  }
   color: $special_dark-grey;
   background-color: inherit;
   font-size: 12px;
@@ -69,4 +68,11 @@
   transform: translateY(-10px);
   text-overflow: ellipsis;
   overflow: hidden;
+
+  @media (min-width: $bp_tablet) {
+    font-size: 14px;
+    line-height: 14px;
+    width: max-content;
+    max-width: 150px;
+  }
 }
