@@ -24,7 +24,13 @@
   line-height: 20px;
   text-align: center;
   padding: 187px 58px 43px;
-  background-image: url("../../images/cat-bag-mobile@1x.jpg");
+  background-image:
+    image-set(
+    url("../../images/cat-bag-mobile@1x.webp") type("image/webp") 1x,
+    url("../../images/cat-bag-mobile@2x.webp") type("image/webp") 2x,
+    url("../../images/cat-bag-mobile@1x.jpg") type("image/jpg") 1x,
+    url("../../images/cat-bag-mobile@2x.jpg") type("image/jpg") 2x
+  );
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -32,19 +38,17 @@
   overflow: hidden;
   overflow-wrap: break-word;
 
-  @media (max-width: 767px) and (min-resolution: 2dppx) {
-    background-image: url("../../images/cat-bag-mobile@2x.jpg");
-  }
-
   @media (min-width: $bp_tablet) {
     min-height: 200px;
     text-align: left;
     padding: 71px 125px 69px 421px;
-    background-image: url("../../images/cat-bag-tablet@1x.jpg");
-  }
-
-  @media (min-width: $bp_tablet) and (min-resolution: 2dppx) {
-    background-image: url("../../images/cat-bag-tablet@2x.jpg");
+    background-image:
+      image-set(
+      url("../../images/cat-bag-tablet@1x.webp") type("image/webp") 1x,
+      url("../../images/cat-bag-tablet@2x.webp") type("image/webp") 2x,
+      url("../../images/cat-bag-tablet@1x.jpg") type("image/jpg") 1x,
+      url("../../images/cat-bag-tablet@2x.jpg") type("image/jpg") 2x
+    );
   }
 
   @media (min-width: $bp_desktop) {
@@ -52,11 +56,13 @@
     min-height: 288px;
     text-align: center;
     padding: 185px 42px 43px;
-    background-image: url("../../images/cat-bag-desktop@1x.jpg");
-  }
-
-  @media (min-width: $bp_desktop) and (min-resolution: 2dppx) {
-    background-image: url("../../images/cat-bag-desktop@2x.jpg");
+    background-image:
+      image-set(
+      url("../../images/cat-bag-desktop@1x.webp") type("image/webp") 1x,
+      url("../../images/cat-bag-desktop@2x.webp") type("image/webp") 2x,
+      url("../../images/cat-bag-desktop@1x.jpg") type("image/jpg") 1x,
+      url("../../images/cat-bag-desktop@2x.jpg") type("image/jpg") 2x
+    );
   }
 
   &::before {
