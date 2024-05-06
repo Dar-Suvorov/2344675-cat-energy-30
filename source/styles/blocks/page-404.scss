@@ -1,0 +1,31 @@
+.page-404 {
+  padding: 28px 20px 20px 20px;
+
+  @media (min-width: $bp_tablet) {
+    padding-left: 120px;
+    padding-right: 120px;
+    padding-bottom: 526px;
+  }
+
+  @media (min-width: $bp_desktop) {
+    width: 1220px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-bottom: 80px;
+  }
+}
+
+.page-404 .title-inner {
+  margin-bottom: 1em;
+}
+
+.page-404 .title-inner--annotation {
+  width: 100%;
+
+}
+
+.page-404 .button-primary {
+  width: 190px;
+}
