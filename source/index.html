@@ -111,13 +111,31 @@
           </div>
         </div>
       </div>
-      <div class="slider">
-        <picture>
-          <source media="(min-width: 768px)" type="image/webp" srcset="images/slider-placeholder-tablet@1x.webp, images/slider-placeholder-tablet@2x.webpg 2x" width="560" height="512">
-          <source type="image/webp" srcset="images/slider-placeholder-mobile@1x.webp, images/slider-placeholder-mobile@2x.webpg 2x" width="280" height="256">
-          <source media="(min-width: 768px)" type="image/png" srcset="images/slider-placeholder-tablet@1x.png, images/slider-placeholder-tablet@2x.png 2x" width="560" height="512">
-          <img src="images/slider-placeholder-mobile@1x.png" srcset="images/slider-placeholder-mobile@2x.png 2x" width="280" height="256" alt="Ваш кот до и после: почувствуйте разницу!">
-        </picture>
+      <div class="example__slider">
+        <div class="slider">
+          <span class="visually-hidden">Слайдер: Ваш кот до и после. Почувствуйте разницу!</span>
+          <ul class="slider__list">
+            <li class="slider__screen slider__screen--before">
+              <picture>
+                <source width="560" height="512" type="image/webp" media="(min-width: 768px)" srcset="images/slider-before-tablet@1x.webp 1x, images/slider-before-tablet@2x.webp 2x">
+                <source width="280" height="256" type="image/webp" srcset="images/slider-before@1x.webp 1x, images/slider-before@2x.webp 2x">
+                <source width="560" height="512" type="image/png" media="(min-width: 768px)" srcset="images/slider-before-tablet@1x.png 1x, images/slider-before-tablet@2x.png 2x">
+                <img class="slider__image" src="images/slider-before@1x.png" srcset="images/slider-before@2x.png 2x" width="280" height="256" alt="Кот до программы Slim" >
+              </picture>
+            </li>
+            <li class="slider__screen slider__screen--after">
+              <picture>
+                <source width="560" height="512" type="image/webp" media="(min-width: 768px)" srcset="images/slider-after-tablet@1x.webp 1x, images/slider-after-tablet@2x.webp 2x">
+                <source width="280" height="256" type="image/webp" srcset="images/slider-after@1x.webp 1x, images/slider-after@2x.webp 2x">
+                <source width="560" height="512" type="image/png" media="(min-width: 768px)" srcset="images/slider-after-tablet@1x.png 1x, images/slider-after-tablet@2x.png 2x">
+                <img class="slider__image" src="images/slider-after@1x.png" srcset="images/slider-after@2x.png 2x" width="280" height="256" alt="Кот после программы Slim">
+              </picture>
+            </li>
+          </ul>
+          <button class="slider__toggle" type="button">
+            <span class="visually-hidden">Переключить слайдер</span>
+          </button>
+        </div>
       </div>
     </section>
   </main>
