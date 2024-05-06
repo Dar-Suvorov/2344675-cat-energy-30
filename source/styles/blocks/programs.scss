@@ -7,7 +7,7 @@
   }
 
   @media (min-width: $bp_desktop) {
-    margin: 0 auto 65px;
+    margin: 0 auto 66px;
     width: $desktop_width;
   }
 }
@@ -158,7 +158,8 @@
 
   @media (min-width: $bp_desktop) {
     margin-left: 162px;
-    margin-bottom: 73px;
+    margin-bottom: 68px;
+    line-height: 40px;
   }
 }
 
@@ -178,7 +179,7 @@
   }
 
   @media (min-width: $bp_desktop) {
-    margin-bottom: 11px;
+    margin-bottom: 12px;
     border-bottom: none;
   }
 }

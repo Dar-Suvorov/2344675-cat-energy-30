@@ -49,6 +49,11 @@
     line-height: 26px;
     margin-top: 2px;
   }
+
+  @media (min-width: $bp_desktop) {
+    padding-top: 16px;
+    padding-bottom: 12px;
+  }
 }
 
 .button-primary--form {
